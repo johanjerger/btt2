@@ -14,9 +14,7 @@
 character generate_character(char body, int x, int y,
                              int(*move)(character), int(*attack)(character*))
 {
-  /*
-   *  Abtract generation method. Never used directly.
-   */
+  // Abtract generation method. Never used directly.
 
   character new_character;
 
@@ -27,14 +25,19 @@ character generate_character(char body, int x, int y,
   new_character.attack = attack;
 
   return new_character;
+
 }
 
 character drugo(int x, int y)
 {
+
   return generate_character('#', x, y, &move_drugo, &attack_drugo);
+
 }
 
 character pterodactyl(int x, int y)
 {
+
   return generate_character('<', x, y, &move_pterodactyl, &attack_pterodactyl);
+
 }
