@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "includes/characters.h"
 #include "includes/characters_moves.h"
 #include "includes/characters_attacks.h"
@@ -12,32 +12,28 @@
  */
 
 character generate_character(char body, int x, int y,
-                             int(*move)(character), int(*attack)(character*))
+                             int (*move)(character *), int (*attack)(character *))
 {
-  // Abtract generation method. Never used directly.
+        // Abtract generation method. Never used directly.
 
-  character new_character;
+        character new_character;
 
-  new_character.body = body;
-  new_character.posX = x;
-  new_character.posY = y;
-  new_character.move = move;
-  new_character.attack = attack;
+        new_character.body = body;
+        new_character.posX = x;
+        new_character.posY = y;
+        new_character.move = move;
+        new_character.attack = attack;
 
-  return new_character;
+        return new_character;
 
 }
 
 character drugo(int x, int y)
 {
-
-  return generate_character('#', x, y, &move_drugo, &attack_drugo);
-
+        return generate_character('#', x, y, &move_drugo, &attack_drugo);
 }
 
 character pterodactyl(int x, int y)
 {
-
-  return generate_character('<', x, y, &move_pterodactyl, &attack_pterodactyl);
-
+        return generate_character('<', x, y, &move_pterodactyl, &attack_pterodactyl);
 }
