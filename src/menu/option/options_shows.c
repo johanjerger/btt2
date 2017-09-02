@@ -9,11 +9,11 @@
 
 int show_option(option * opt)
 {
-  printf("%s\n", opt->text);
+        printf("%s\n", opt->text);
 }
 
 
 int show_option_selected(option * opt)
 {
-  printf("%s\n", opt->text);
+        printf("%s\n", opt->text);
 }
