@@ -9,12 +9,12 @@
 
 int attack_drugo(character * drugo)
 {
-  drugo->posX = 4;
-  return 9;
+        drugo->posX = 4;
+        return 9;
 }
 
 
 int attack_pterodactyl(character * pterodactyl)
 {
-  return 0;
+        return 0;
 }
