@@ -1,5 +1,5 @@
-#ifndef BTT2_MN_H
-#define BTT2_MN_H
+#ifndef BTT2_OP_H
+#define BTT2_OP_H
 
 /*
  *  Struct that contains the attributes of an option
@@ -7,10 +7,10 @@
  *  it show and how action perform when you click it.
  */
 
-typedef struct
+typedef struct _option
 {
   char * text;
-  int(*show_option)(option);
+  int(*show_option)(struct * _option);
   int(*active_option)();
 } option;
 
