@@ -22,14 +22,8 @@ main.o:
 clean:
 		-rm -r $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
 
-clean-test:
-		-rm -r $(BUILD_TEST_FOLDER)
-
 folders:
 		-mkdir $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
-
-folders-test:
-		-mkdir $(TEMPORAL_FOLDER) $(BUILD_TEST_FOLDER)
 
 install: $(BUILD_FOLDER)/btt2
 		cp -p $(BUILD_FOLDER)/btt2 $(INSTALL_FOLDER)
@@ -52,11 +46,12 @@ compile_install: all install
 test-run: test
 			@ ./$(BUILD_TEST_FOLDER)/btt2test
 
-test: clean-test folders-test test.o $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
+test: clean-test folders-test test.o $(TEMPORAL_FOLDER) $(BUILD_TEST_FOLDER)
 	    gcc $(TEMPORAL_FOLDER)/** -o $(BUILD_TEST_FOLDER)/btt2test $(CFLAG) $(DEBUG)
 
 test.o:
-		gcc -c $(TEST_FOLDER)/characters.c -o $(TEMPORAL_FOLDER)/characters.o $(CFLAG) $(DEBUG)
+	  gcc -c $(TEST_FOLDER)/main_test.c -o $(TEMPORAL_FOLDER)/main_test.o $(CFLAG) $(DEBUG)
+		gcc -c $(TEST_FOLDER)/characters_test.c -o $(TEMPORAL_FOLDER)/characters.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_generator.c -o $(TEMPORAL_FOLDER)/characters_generator.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_moves.c -o $(TEMPORAL_FOLDER)/characters_moves.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_attacks.c -o $(TEMPORAL_FOLDER)/characters_attacks.o $(CFLAG) $(DEBUG)
@@ -64,3 +59,6 @@ test.o:
 
 clean-test:
 	  -rm -r $(TEMPORAL_FOLDER) $(BUILD_TEST_FOLDER)
+
+folders-test:
+		-mkdir $(TEMPORAL_FOLDER) $(BUILD_TEST_FOLDER)
