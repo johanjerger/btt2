@@ -9,12 +9,12 @@
 
 int move_drugo(character * drugo)
 {
-  drugo->posX = 4;
-  return 8;
+        drugo->posX = 4;
+        return 8;
 }
 
 
 int move_pterodactyl(character * pterodactyl)
 {
-  return 0;
+        return 0;
 }
