@@ -13,13 +13,11 @@ typedef struct option_node
   struct option_node * next_option;
 } list_of_options;
 
-typedef struct
+typedef struct struct _menu
 {
   char * title;
   list_of_options options;
-  int(*previous_option)(menu);
-  int(*next_option)(menu);
-  int(*show_menu)(menu);
+  int(*show_menu)(struct * _menu);
 } menu;
 
 #endif
