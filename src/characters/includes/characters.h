@@ -7,13 +7,13 @@
  *  in the matrix and how its moves and attacks.
  */
 
-typedef struct
+typedef struct _character
 {
   char body;
   int posX;
   int posY;
-  int(*move)(character);
-  int(*attack)(character);
+  int(*move)(struct _character *);
+  int(*attack)(struct _character *);
 } character;
 
 #endif
