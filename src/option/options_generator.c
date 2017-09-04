@@ -5,7 +5,6 @@
 
 option generate_option (char * text, int (*show_option)(option), int (*active_option)(option))
 {
-
         //  Abtract generate method. Never used directly.
 
         option new_option;
@@ -15,7 +14,6 @@ option generate_option (char * text, int (*show_option)(option), int (*active_op
         new_option.active_option = active_option;
 
         return option;
-
 }
 
 option unselected_option(char * text, int (*active_option)(option))
