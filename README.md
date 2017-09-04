@@ -23,7 +23,7 @@ This game attends to has a strong standard, maintain a really nice [change-log][
 ### Installation
 ---
 
-  Run in your favorite shell: (maybe you require sudo permition)
+  Run the following commands in your favorite shell: (maybe you require sudo permition)
   
    ```
    $ git clone https://github.com/johanjerger/btt2
