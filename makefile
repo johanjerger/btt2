@@ -51,6 +51,7 @@ test: clean-test folders-test test.o $(TEMPORAL_FOLDER) $(BUILD_TEST_FOLDER)
 
 test.o:
 	  gcc -c $(TEST_FOLDER)/main_test.c -o $(TEMPORAL_FOLDER)/main_test.o $(CFLAG) $(DEBUG)
+		gcc -c $(TEST_FOLDER)/test.c -o $(TEMPORAL_FOLDER)/test.o $(CFLAG) $(DEBUG)
 		gcc -c $(TEST_FOLDER)/characters_test.c -o $(TEMPORAL_FOLDER)/characters.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_generator.c -o $(TEMPORAL_FOLDER)/characters_generator.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_moves.c -o $(TEMPORAL_FOLDER)/characters_moves.o $(CFLAG) $(DEBUG)
