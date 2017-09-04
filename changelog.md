@@ -3,6 +3,9 @@
 ## History Index
 ---
 
-    * [DATE1][https://github.com/johanjerger/btt2/edit/master/changelog.md#DATE1]
+   * [04/09/2017][1]
 
-## DATE1
+## 04/09/2017
+
+
+[1]: https://github.com/johanjerger/btt2/edit/master/changelog.md#04/09/2017
