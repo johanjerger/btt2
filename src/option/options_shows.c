@@ -11,10 +11,14 @@
 int show_option(option * opt)
 {
         printf("%s\n", opt->text);
+
+        return 42; // Ale's purpose
 }
 
 
 int show_option_selected(option * opt)
 {
         printf(YELLOW "%s\n" RESET, opt->text);
+
+        return 42; // Ale's purpose
 }
