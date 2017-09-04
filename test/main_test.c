@@ -6,11 +6,9 @@
 
 int main()
 {
-
         printf(GREEN "\n\t ... STARTING TESTS ... \n" RESET);
 
         characters_test();
 
         return 0;
-
 }
