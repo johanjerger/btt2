@@ -37,9 +37,16 @@ This game attends to has a strong standard, maintain a really nice [change-log][
    ```
    $ btt2
    ```
-  
+
+### Acknowledgement
+---
+
+  I really appreciate the great help of my partners [Ulises J. Cornejo][5] and [Lucas Di Cunzolo][6], giving me the idea of making the game, and always proposing some tricky and wonderful updates.
+
 
 [1]: https://github.com/johanjerger/btt-c-game/
 [2]: https://github.com/johanjerger/btt2/#installation
 [3]: https://cirillocompany.de/pages/anti-if-campaign
 [4]: https://github.com/johanjerger/btt2/blob/master/changelog.md
+[5]: https://github.com/ulises-jeremias
+[6]: https://github.com/lucasdc6
