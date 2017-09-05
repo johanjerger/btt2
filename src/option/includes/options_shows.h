@@ -1,8 +1,8 @@
 #ifndef BTT2_OPS_H
 #define BTT2_OPS_H
 
-  character show_option(option);
+  void show_option_unselected(option *);
 
-  character show_option_selected(option);
+  void show_option_selected(option *);
 
 #endif
