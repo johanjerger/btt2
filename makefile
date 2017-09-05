@@ -9,15 +9,12 @@ CFLAG=-O3 -Wall -std=gnu11
 # DEBUG=-g
 
 
-.PHONY: all clean clean_test folders install uninstall reinstall lines test test-run
+.PHONY: all clean clean-test folders install uninstall reinstall lines test test-run
 all: clean folders main.o $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
 	    gcc $(TEMPORAL_FOLDER)/** -o $(BUILD_FOLDER)/btt2 $(CFLAG) $(DEBUG)
 
 main.o:
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/characters/characters_generator.c -o $(TEMPORAL_FOLDER)/characters_generator.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/characters/characters_moves.c -o $(TEMPORAL_FOLDER)/characters_moves.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/characters/characters_attacks.c -o $(TEMPORAL_FOLDER)/characters_attacks.o $(CFLAG) $(DEBUG)
 
 clean:
 		-rm -r $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
@@ -62,9 +59,13 @@ test.o:
 		gcc -c $(SOURCE_FOLDER)/characters/characters_attacks.c -o $(TEMPORAL_FOLDER)/characters_attacks.o $(CFLAG) $(DEBUG)
 
 		#OPTIONS TEST
-		gcc -c $(TEST_FOLDER)/option_test.c -o $(TEMPORAL_FOLDER)/option_test.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/option/options_generator.c -o $(TEMPORAL_FOLDER)/options_generator.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/option/options_shows.c -o $(TEMPORAL_FOLDER)/options_shows.o $(CFLAG) $(DEBUG)
+		gcc -c $(TEST_FOLDER)/options_test.c -o $(TEMPORAL_FOLDER)/options_test.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/options/options_generator.c -o $(TEMPORAL_FOLDER)/options_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/options/options_shows.c -o $(TEMPORAL_FOLDER)/options_shows.o $(CFLAG) $(DEBUG)
+
+		#OPTIONS LIST TEST
+		gcc -c $(TEST_FOLDER)/options_list_test.c -o $(TEMPORAL_FOLDER)/options_list_test.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/options_list/options_list.c -o $(TEMPORAL_FOLDER)/options_list.o $(CFLAG) $(DEBUG)
 
 		#UTILITIES
 		gcc -c $(SOURCE_FOLDER)/utilities/utilities.c -o $(TEMPORAL_FOLDER)/utilities.o $(CFLAG) $(DEBUG)
