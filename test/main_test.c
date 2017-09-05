@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "includes/test.h"
 #include "includes/characters_test.h"
-#include "includes/option_test.h"
+#include "includes/options_test.h"
+#include "includes/options_list_test.h"
 #include "../src/utilities/includes/colors.h"
 #include "../src/utilities/includes/utilities.h"
 
@@ -13,7 +14,9 @@ int main()
 
         characters_test();
 
-        option_test();
+        options_test();
+
+        options_list_test();
 
         make_footer();
 
