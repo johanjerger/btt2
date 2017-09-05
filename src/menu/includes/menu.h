@@ -7,12 +7,6 @@
  *  and the uses functions.
  */
 
-typedef struct option_node
-{
-  option actual_option;
-  struct option_node * next_option;
-} list_of_options;
-
 typedef struct struct _menu
 {
   char * title;
