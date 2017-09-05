@@ -5,17 +5,23 @@
 #include "../src/utilities/includes/colors.h"
 #include "../src/utilities/includes/utilities.h"
 
-int make_test_title(char * test_name)
+void make_header()
 {
-        // Method that make the Test title header
-
-        printf(GREEN "\n BEGINING %s TEST\n\n" RESET, test_name);
-        sleep(500);
-
-        return 0;
+        printf(GREEN "\n\t  ... STARTING TESTS ...  \t\n" RESET);
 }
 
-int assert(bool success, char * method)
+void make_footer()
+{
+        printf(GREEN "\n\t  ... TESTS DONE ...  \t\n\n" RESET);
+}
+
+void make_test_title(char * test_name)
+{
+        printf(GREEN "\n BEGINING %s TEST\n\n" RESET, test_name);
+        sleep(500);
+}
+
+void assert(bool success, char * method)
 {
         // assert method to avoid the duplicate code in tests...
 
@@ -29,15 +35,9 @@ int assert(bool success, char * method)
         printf(GREEN "\t - %s method %s ..............................     SUCCESS \n" RESET, method, spaces) :
         fprintf(stderr, RED "\t - %s method %s ..............................     FAIL \n" RESET, method, spaces);
         sleep(500);
-
-        return 0;
 }
 
-int end_test_title(char * test_name)
+void end_test_title(char * test_name)
 {
-        // Method that announces the finish of the current Test
-
         printf(GREEN "\n %s TEST FINISH\n\n" RESET, test_name);
-
-        return 0;
 }
