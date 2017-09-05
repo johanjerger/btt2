@@ -50,12 +50,23 @@ test: clean-test folders-test test.o $(TEMPORAL_FOLDER) $(BUILD_TEST_FOLDER)
 	    gcc $(TEMPORAL_FOLDER)/** -o $(BUILD_TEST_FOLDER)/btt2test $(CFLAG) $(DEBUG)
 
 test.o:
+
+		#TEST CLASES
 	  gcc -c $(TEST_FOLDER)/main_test.c -o $(TEMPORAL_FOLDER)/main_test.o $(CFLAG) $(DEBUG)
 		gcc -c $(TEST_FOLDER)/test.c -o $(TEMPORAL_FOLDER)/test.o $(CFLAG) $(DEBUG)
-		gcc -c $(TEST_FOLDER)/characters_test.c -o $(TEMPORAL_FOLDER)/characters.o $(CFLAG) $(DEBUG)
+
+		#CHARACTERS TEST
+		gcc -c $(TEST_FOLDER)/characters_test.c -o $(TEMPORAL_FOLDER)/characters_test.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_generator.c -o $(TEMPORAL_FOLDER)/characters_generator.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_moves.c -o $(TEMPORAL_FOLDER)/characters_moves.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_attacks.c -o $(TEMPORAL_FOLDER)/characters_attacks.o $(CFLAG) $(DEBUG)
+
+		#OPTIONS TEST
+		gcc -c $(TEST_FOLDER)/option_test.c -o $(TEMPORAL_FOLDER)/option_test.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/option/options_generator.c -o $(TEMPORAL_FOLDER)/options_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/option/options_shows.c -o $(TEMPORAL_FOLDER)/options_shows.o $(CFLAG) $(DEBUG)
+
+		#UTILITIES
 		gcc -c $(SOURCE_FOLDER)/utilities/utilities.c -o $(TEMPORAL_FOLDER)/utilities.o $(CFLAG) $(DEBUG)
 
 clean-test:
