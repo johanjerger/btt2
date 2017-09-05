@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "utilities/includes/colors.h"
+#include "../utilities/includes/colors.h"
 #include "includes/options.h"
 
 /*
@@ -8,17 +8,13 @@
  *  shows.
  */
 
-int show_option(option * opt)
+void show_option_unselected(option * opt)
 {
         printf("%s\n", opt->text);
-
-        return 42; // Ale's purpose
 }
 
 
-int show_option_selected(option * opt)
+void show_option_selected(option * opt)
 {
         printf(YELLOW "%s\n" RESET, opt->text);
-
-        return 42; // Ale's purpose
 }
