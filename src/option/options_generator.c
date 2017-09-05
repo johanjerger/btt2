@@ -3,7 +3,7 @@
 #include "includes/options.h"
 #include "includes/options_shows.h"
 
-option generate_option (char * text, int (*show_option)(option), int (*active_option)(option))
+option generate_option (char * text, void (*show_option)(option *), int (*active_option)(option *))
 {
         //  Abtract generate method. Never used directly.
 
@@ -13,15 +13,15 @@ option generate_option (char * text, int (*show_option)(option), int (*active_op
         new_option.show_option = show_option;
         new_option.active_option = active_option;
 
-        return option;
+        return new_option;
 }
 
-option unselected_option(char * text, int (*active_option)(option))
+option unselected_option(char * text, int (*active_option)())
 {
-        return generate_option(text, &show_option, active_option);
+        return generate_option(text, show_option_unselected, active_option);
 }
 
-option selected_option(char * text, int (*active_option)(option))
+option selected_option(char * text, int (*active_option)())
 {
-        return generate_option(text, &show_option_selected, active_option);
+        return generate_option(text, show_option_selected, active_option);
 }
