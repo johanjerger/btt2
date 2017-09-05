@@ -30,6 +30,6 @@
 
   
 
-[1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initialcommit
+[1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initial-commit
 [2]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04092017
 [3]: https://github.com/johanjerger/btt2/blob/master/changelog.md#05092017
