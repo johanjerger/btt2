@@ -3,10 +3,14 @@
 
 #include <stdbool.h>
 
-  int make_test_title(char *);
+  void make_header();
 
-  int assert(bool, char *);
+  void make_footer();
 
-  int end_test_title(char *);
+  void make_test_title(char *);
+
+  void assert(bool, char *);
+
+  void end_test_title(char *);
 
 #endif
