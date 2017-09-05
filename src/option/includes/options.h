@@ -10,7 +10,7 @@
 typedef struct _option
 {
   char * text;
-  int(*show_option)(struct * _option);
+  void (*show_option)(struct _option *);
   int(*active_option)();
 } option;
 
