@@ -3,10 +3,10 @@
 ### History Index
 ---
 
-   * [Initial commit][1]
-   * [04/09/2017][2]
-   * [05/09/2017][3]
-   * [27/09/2017][4]
+   * Initial commit [:arrow_heading_down:][1]
+   * 04/09/2017 [:arrow_heading_down:][2]
+   * 05/09/2017 [:arrow_heading_down:][3]
+   * 27/09/2017 [:arrow_heading_down:][4]
 
 #### Initial commit
 
