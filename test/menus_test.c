@@ -9,10 +9,6 @@
 #include "../src/options/includes/options_generator.h"
 #include "../src/options/includes/options_shows.h"
 
-int auxiliar_menu_test_function(){
-        return 0;
-}
-
 int menus_test()
 {
         menu * main_menu = new_main_menu();
