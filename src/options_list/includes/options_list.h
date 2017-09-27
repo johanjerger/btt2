@@ -10,6 +10,6 @@ typedef struct _options_list
   struct _options_list * previous_option;
 } options_list;
 
-options_list new_options_list(option *, int);
+options_list * new_options_list(option **, int);
 
 #endif
