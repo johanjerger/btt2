@@ -8,9 +8,14 @@
 #include "../src/utilities/includes/colors.h"
 #include "../src/utilities/includes/utilities.h"
 
+/*
+ * This is the test main function,
+ * here I manage the order of the
+ * test functions.
+ */
+
 int main()
 {
-
         make_header();
 
         characters_test();
