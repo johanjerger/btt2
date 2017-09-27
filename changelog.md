@@ -6,6 +6,7 @@
    * [Initial commit][1]
    * [04/09/2017][2]
    * [05/09/2017][3]
+   * [27/09/2017][4]
 
 #### Initial commit
 
@@ -27,9 +28,17 @@
   * Options list Structure defined.
   * Options list methods defined.
   * Options list Test defined.
-
   
+#### 27/09/2017
+  
+  * Option structure modified.
+  * Options list structure modified.
+  * Menus added.
+  * Options test modified.
+  * Options list test modified.
+  * Menus test added.
 
 [1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initial-commit
 [2]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04092017
 [3]: https://github.com/johanjerger/btt2/blob/master/changelog.md#05092017
+[4]: https://github.com/johanjerger/btt2/blob/master/changelog.md#27092017
