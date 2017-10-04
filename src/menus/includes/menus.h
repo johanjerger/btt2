@@ -13,7 +13,10 @@ typedef struct _menu
 {
   char * title;
   options_list * options;
+  options_list * selected_option;
   int(*show_menu)(struct _menu *);
+  int(*select_next_option)(struct _menu *);
+  int(*select_previous_option)(struct _menu *);
 } menu;
 
 #endif
