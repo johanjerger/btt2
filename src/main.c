@@ -8,6 +8,6 @@ int main()
         menu * main_menu = new_main_menu();
 
         main_menu->show_menu(main_menu);
-        
+
         return 0;
 }
