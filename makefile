@@ -32,6 +32,7 @@ main.o:
 		#MENUS
 		gcc -c $(SOURCE_FOLDER)/menus/menus_generator.c -o $(TEMPORAL_FOLDER)/menus_generator.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_shows.c -o $(TEMPORAL_FOLDER)/menus_shows.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/menus/menus_options_change.c -o $(TEMPORAL_FOLDER)/menus_options_change.o $(CFLAG) $(DEBUG)
 
 		#UTILITIES
 		gcc -c $(SOURCE_FOLDER)/utilities/utilities.c -o $(TEMPORAL_FOLDER)/utilities.o $(CFLAG) $(DEBUG)
@@ -91,6 +92,7 @@ test.o:
 		gcc -c $(TEST_FOLDER)/menus_test.c -o $(TEMPORAL_FOLDER)/menus_test.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_generator.c -o $(TEMPORAL_FOLDER)/menus_generator.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_shows.c -o $(TEMPORAL_FOLDER)/menus_shows.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/menus/menus_options_change.c -o $(TEMPORAL_FOLDER)/menus_options_change.o $(CFLAG) $(DEBUG)
 
 		#UTILITIES
 		gcc -c $(SOURCE_FOLDER)/utilities/utilities.c -o $(TEMPORAL_FOLDER)/utilities.o $(CFLAG) $(DEBUG)
