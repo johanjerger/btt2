@@ -21,6 +21,16 @@ int menus_test()
         assert(main_menu->show_menu == &show_main_menu
                , "show menu");
 
+        main_menu->select_next_option(main_menu);
+
+        assert(main_menu->selected_option->option->show_option == &show_option_selected
+               , "next opt");
+
+        main_menu->select_previous_option(main_menu);
+
+        assert(main_menu->selected_option->option->show_option == &show_option_selected
+               , "prev opt");
+
         end_test_title("menus");
 
         free(main_menu);
