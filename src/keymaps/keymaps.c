@@ -27,6 +27,7 @@ keymap * new_keymap(char * keys, int (**actions)(), int size)
         return new_keymap[0];
 }
 
+
 keymap * new_main_menu_keymap()
 {
         int size = 3;
