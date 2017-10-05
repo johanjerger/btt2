@@ -4,6 +4,7 @@
 #include "includes/keymaps_exec.h"
 #include "../menus/includes/menus.h"
 #include "../menus/includes/menus_options_change.h"
+#include "../menus/includes/menus_execute.h"
 
 keymap * new_keymap(char * keys, int (**actions)(), int size)
 {
@@ -28,12 +29,13 @@ keymap * new_keymap(char * keys, int (**actions)(), int size)
 
 keymap * new_main_menu_keymap()
 {
-        int size = 2;
+        int size = 3;
 
-        char keys[2] = {'w', 's'};
-        int (*actions[2])() = {
+        char keys[3] = {'w', 's', (char) 10};
+        int (*actions[3])() = {
                 &select_previous_option,
-                &select_next_option
+                &select_next_option,
+                &execute_menu
         };
 
         return new_keymap(keys, actions, size);
