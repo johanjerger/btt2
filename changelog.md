@@ -8,6 +8,7 @@
    * 05/09/2017 [:arrow_heading_down:][3]
    * 27/09/2017 [:arrow_heading_down:][4]
    * 04/10/2017 [:arrow_heading_down:][5]
+   * 05/10/2017 [:arrow_heading_down:][6]
 
 #### Initial commit
 
@@ -46,8 +47,16 @@
   * Menus structure modified.
   * Makefile and test modified.
 
+#### 05/10/2017
+
+  * Added keymaps structure.
+  * Added keymaps test.
+  * Integration test.
+  * Issue detected with the SIGINT signal.
+
 [1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initial-commit
 [2]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04092017
 [3]: https://github.com/johanjerger/btt2/blob/master/changelog.md#05092017
 [4]: https://github.com/johanjerger/btt2/blob/master/changelog.md#27092017
 [5]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04102017
+[6]: https://github.com/johanjerger/btt2/blob/master/changelog.md#05102017
