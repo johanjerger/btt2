@@ -11,6 +11,7 @@
 
 int clear()
 {
+        btt_sleep(25);
         if((system("clear")) == -1) {
                 fprintf(stderr, RED "Error calling system \"clear\" function\n" RESET);
         }
@@ -38,6 +39,21 @@ int btt_sleep(int time)
         return 0;
 }
 
+
+char getch(void)
+{
+        struct termios oldattr, newattr;
+        short ch;
+        tcgetattr(1, &oldattr);
+        newattr = oldattr;
+        newattr.c_lflag &= ~(ICANON | ECHO);
+        tcsetattr(1, TCSANOW, &newattr);
+        ch = getchar();
+        tcsetattr(1, TCSANOW, &oldattr);
+        return ch;
+}
+
+
 char kbhit()
 {
         struct termios oldt, newt;
@@ -51,7 +67,7 @@ char kbhit()
         oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
         fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
 
-        if(!(scanf("%s", ch))) {
+        if(!(fscanf(stdin,"%s", ch))) {
                 fprintf(stderr, "error -> %d\n", EIO);
                 exit(1);
         }
@@ -59,9 +75,11 @@ char kbhit()
         tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
         fcntl(STDIN_FILENO, F_SETFL, oldf);
 
-        if(ch[0] != EOF) {
-                return ch[0];
-        }
+        return ch[0];
+}
 
-        return 0;
+
+int go_out(menu * actual_menu)
+{
+        exit(0);
 }
