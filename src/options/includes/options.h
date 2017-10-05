@@ -11,7 +11,11 @@ typedef struct _option
 {
   char * text;
   void (*show_option)(struct _option *);
-  int(*active_option)();
+  int (*active_option)();
 } option;
+
+option * unselected_option(char * text, int (*active_option)());
+
+option * selected_option(char * text, int (*active_option)());
 
 #endif
