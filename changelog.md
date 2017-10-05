@@ -55,6 +55,7 @@
   * Issue detected with the SIGINT signal. (fixed)
   * Menus execute method added.
   * Infrastructure changed.
+  * Methods desacoplated in utilities.c file.
 
 [1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initial-commit
 [2]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04092017
