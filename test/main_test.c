@@ -5,6 +5,7 @@
 #include "includes/options_test.h"
 #include "includes/options_list_test.h"
 #include "includes/menus_test.h"
+#include "includes/keymaps_test.h"
 #include "../src/utilities/includes/colors.h"
 #include "../src/utilities/includes/utilities.h"
 
@@ -23,6 +24,8 @@ int main()
         options_test();
 
         options_list_test();
+
+        keymaps_test();
 
         menus_test();
 
