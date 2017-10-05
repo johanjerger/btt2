@@ -18,21 +18,22 @@ main.o:
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG) $(DEBUG)
 
 		#CHARACTERS
-		gcc -c $(SOURCE_FOLDER)/characters/characters_generator.c -o $(TEMPORAL_FOLDER)/characters_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/characters/characters.c -o $(TEMPORAL_FOLDER)/characters.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_moves.c -o $(TEMPORAL_FOLDER)/characters_moves.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_attacks.c -o $(TEMPORAL_FOLDER)/characters_attacks.o $(CFLAG) $(DEBUG)
 
 		#OPTIONS
-		gcc -c $(SOURCE_FOLDER)/options/options_generator.c -o $(TEMPORAL_FOLDER)/options_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/options/options.c -o $(TEMPORAL_FOLDER)/options.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/options/options_shows.c -o $(TEMPORAL_FOLDER)/options_shows.o $(CFLAG) $(DEBUG)
 
 		#OPTIONS LIST
 		gcc -c $(SOURCE_FOLDER)/options_list/options_list.c -o $(TEMPORAL_FOLDER)/options_list.o $(CFLAG) $(DEBUG)
 
 		#MENUS
-		gcc -c $(SOURCE_FOLDER)/menus/menus_generator.c -o $(TEMPORAL_FOLDER)/menus_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/menus/menus.c -o $(TEMPORAL_FOLDER)/menus.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_shows.c -o $(TEMPORAL_FOLDER)/menus_shows.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_options_change.c -o $(TEMPORAL_FOLDER)/menus_options_change.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/menus/menus_execute.c -o $(TEMPORAL_FOLDER)/menus_execute.o $(CFLAG) $(DEBUG)
 
 		#KEYMAPS
 		gcc -c $(SOURCE_FOLDER)/keymaps/keymaps.c -o $(TEMPORAL_FOLDER)/keymaps.o $(CFLAG) $(DEBUG)
@@ -56,10 +57,14 @@ uninstall: $(INSTALL_FOLDER)/btt2
 reinstall: uninstall install
 
 lines:
-		@ printf "	.c files               "
+		@ printf "	.c files              "
 		@ find $(SOURCE_FOLDER)/ -name '*.c' | xargs wc -l | grep total
 		@ printf "	.h files      	       "
 		@ find $(SOURCE_FOLDER)/ -name '*.h' | xargs wc -l | grep total
+		@ printf "	.c test files          "
+		@ find $(TEST_FOLDER)/ -name '*.c' | xargs wc -l | grep total
+		@ printf "	.h test files 	        "
+		@ find $(TEST_FOLDER)/ -name '*.h' | xargs wc -l | grep total
 
 compile_install: all install
 
@@ -79,13 +84,13 @@ test.o:
 
 		#CHARACTERS TEST
 		gcc -c $(TEST_FOLDER)/characters_test.c -o $(TEMPORAL_FOLDER)/characters_test.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/characters/characters_generator.c -o $(TEMPORAL_FOLDER)/characters_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/characters/characters.c -o $(TEMPORAL_FOLDER)/characters.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_moves.c -o $(TEMPORAL_FOLDER)/characters_moves.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/characters/characters_attacks.c -o $(TEMPORAL_FOLDER)/characters_attacks.o $(CFLAG) $(DEBUG)
 
 		#OPTIONS TEST
 		gcc -c $(TEST_FOLDER)/options_test.c -o $(TEMPORAL_FOLDER)/options_test.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/options/options_generator.c -o $(TEMPORAL_FOLDER)/options_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/options/options.c -o $(TEMPORAL_FOLDER)/options.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/options/options_shows.c -o $(TEMPORAL_FOLDER)/options_shows.o $(CFLAG) $(DEBUG)
 
 		#OPTIONS LIST TEST
@@ -94,9 +99,10 @@ test.o:
 
 		#MENUS TEST
 		gcc -c $(TEST_FOLDER)/menus_test.c -o $(TEMPORAL_FOLDER)/menus_test.o $(CFLAG) $(DEBUG)
-		gcc -c $(SOURCE_FOLDER)/menus/menus_generator.c -o $(TEMPORAL_FOLDER)/menus_generator.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/menus/menus.c -o $(TEMPORAL_FOLDER)/menus.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_shows.c -o $(TEMPORAL_FOLDER)/menus_shows.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_options_change.c -o $(TEMPORAL_FOLDER)/menus_options_change.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/menus/menus_execute.c -o $(TEMPORAL_FOLDER)/menus_execute.o $(CFLAG) $(DEBUG)
 
 		#KEYMAPS
 		gcc -c $(TEST_FOLDER)/keymaps_test.c -o $(TEMPORAL_FOLDER)/keymaps_test.o $(CFLAG) $(DEBUG)
