@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <termios.h>
-#include <unistd.h>
-#include <errno.h>
-#include <fcntl.h>
 #include "includes/utilities.h"
 #include "includes/colors.h"
 
@@ -40,46 +36,7 @@ int btt_sleep(int time)
 }
 
 
-char getch(void)
-{
-        struct termios oldattr, newattr;
-        short ch;
-        tcgetattr(1, &oldattr);
-        newattr = oldattr;
-        newattr.c_lflag &= ~(ICANON | ECHO);
-        tcsetattr(1, TCSANOW, &newattr);
-        ch = getchar();
-        tcsetattr(1, TCSANOW, &oldattr);
-        return ch;
-}
-
-
-char kbhit()
-{
-        struct termios oldt, newt;
-        char ch[20];
-        short oldf;
-
-        tcgetattr(STDIN_FILENO, &oldt);
-        newt = oldt;
-        newt.c_lflag &= ~(ICANON | ECHO);
-        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-        oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
-        fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
-
-        if(!(fscanf(stdin,"%s", ch))) {
-                fprintf(stderr, "error -> %d\n", EIO);
-                exit(1);
-        }
-
-        tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-        fcntl(STDIN_FILENO, F_SETFL, oldf);
-
-        return ch[0];
-}
-
-
-int go_out(menu * actual_menu)
+int go_out()
 {
         exit(0);
 }
