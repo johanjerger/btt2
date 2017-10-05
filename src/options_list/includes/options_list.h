@@ -12,4 +12,6 @@ typedef struct _options_list
 
 options_list * new_options_list(option **, int);
 
+options_list * new_main_menu_options_list();
+
 #endif
