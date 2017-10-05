@@ -12,7 +12,7 @@
  */
 
 character * generate_character(char body, int x, int y,
-                             int (*move)(character *), int (*attack)(character *))
+                               int (*move)(character *), int (*attack)(character *))
 {
         // Abtract generation method. Never used directly.
 
