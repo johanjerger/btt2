@@ -19,4 +19,8 @@ typedef struct _menu
   int(*select_previous_option)(struct _menu *);
 } menu;
 
+menu * new_menu(char *, options_list *, int(*show_menu)(menu *));
+
+menu * new_main_menu();
+
 #endif
