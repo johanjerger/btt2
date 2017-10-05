@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "includes/options_list.h"
+#include "../utilities/includes/utilities.h"
 
 options_list * new_options_list(option ** options, int size)
 {
@@ -25,4 +26,23 @@ options_list * new_options_list(option ** options, int size)
         new_options_list[size]->previous_option = new_options_list[size - 1];
 
         return new_options_list[0];
+}
+
+
+int auxiliar_option_function()
+{
+        return 0;
+}
+
+
+options_list * new_main_menu_options_list()
+{
+        int size = 3;
+        option * options[size];
+
+        options[0] = selected_option("START", &auxiliar_option_function);
+        options[1] = unselected_option("CONFIGURATION", &auxiliar_option_function);
+        options[2] = unselected_option("EXIT", &go_out);
+
+        return new_options_list(options, size);
 }
