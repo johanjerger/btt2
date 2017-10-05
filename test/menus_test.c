@@ -3,10 +3,8 @@
 #include <string.h>
 #include "includes/test.h"
 #include "../src/menus/includes/menus.h"
-#include "../src/menus/includes/menus_generator.h"
 #include "../src/menus/includes/menus_shows.h"
 #include "../src/options/includes/options.h"
-#include "../src/options/includes/options_generator.h"
 #include "../src/options/includes/options_shows.h"
 
 int menus_test()
