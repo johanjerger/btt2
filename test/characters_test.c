@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "includes/test.h"
 #include "../src/characters/includes/characters.h"
-#include "../src/characters/includes/characters_generator.h"
 #include "../src/characters/includes/characters_attacks.h"
 #include "../src/characters/includes/characters_moves.h"
 
