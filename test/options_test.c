@@ -3,7 +3,6 @@
 #include <string.h>
 #include "includes/test.h"
 #include "../src/options/includes/options.h"
-#include "../src/options/includes/options_generator.h"
 #include "../src/options/includes/options_shows.h"
 
 int test_active_option()
