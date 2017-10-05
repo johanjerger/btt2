@@ -15,5 +15,5 @@ typedef struct _character
   int(*move)(struct _character *);
   int(*attack)(struct _character *);
 } character;
-
+ 
 #endif
