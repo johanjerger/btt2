@@ -34,6 +34,10 @@ main.o:
 		gcc -c $(SOURCE_FOLDER)/menus/menus_shows.c -o $(TEMPORAL_FOLDER)/menus_shows.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_options_change.c -o $(TEMPORAL_FOLDER)/menus_options_change.o $(CFLAG) $(DEBUG)
 
+		#KEYMAPS
+		gcc -c $(SOURCE_FOLDER)/keymaps/keymaps.c -o $(TEMPORAL_FOLDER)/keymaps.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/keymaps/keymaps_exec.c -o $(TEMPORAL_FOLDER)/keymaps_exec.o $(CFLAG) $(DEBUG)
+
 		#UTILITIES
 		gcc -c $(SOURCE_FOLDER)/utilities/utilities.c -o $(TEMPORAL_FOLDER)/utilities.o $(CFLAG) $(DEBUG)
 
@@ -93,6 +97,11 @@ test.o:
 		gcc -c $(SOURCE_FOLDER)/menus/menus_generator.c -o $(TEMPORAL_FOLDER)/menus_generator.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_shows.c -o $(TEMPORAL_FOLDER)/menus_shows.o $(CFLAG) $(DEBUG)
 		gcc -c $(SOURCE_FOLDER)/menus/menus_options_change.c -o $(TEMPORAL_FOLDER)/menus_options_change.o $(CFLAG) $(DEBUG)
+
+		#KEYMAPS
+		gcc -c $(TEST_FOLDER)/keymaps_test.c -o $(TEMPORAL_FOLDER)/keymaps_test.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/keymaps/keymaps.c -o $(TEMPORAL_FOLDER)/keymaps.o $(CFLAG) $(DEBUG)
+		gcc -c $(SOURCE_FOLDER)/keymaps/keymaps_exec.c -o $(TEMPORAL_FOLDER)/keymaps_exec.o $(CFLAG) $(DEBUG)
 
 		#UTILITIES
 		gcc -c $(SOURCE_FOLDER)/utilities/utilities.c -o $(TEMPORAL_FOLDER)/utilities.o $(CFLAG) $(DEBUG)
