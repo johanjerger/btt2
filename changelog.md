@@ -52,7 +52,9 @@
   * Added keymaps structure.
   * Added keymaps test.
   * Integration test.
-  * Issue detected with the SIGINT signal.
+  * Issue detected with the SIGINT signal. (fixed)
+  * Menus execute method added.
+  * Infrastructure changed.
 
 [1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initial-commit
 [2]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04092017
