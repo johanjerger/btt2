@@ -6,3 +6,4 @@
   int move_pterodactyl(character *);
 
 #endif
+ 
