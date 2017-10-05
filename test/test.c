@@ -18,7 +18,7 @@ void make_footer()
 void make_test_title(char * test_name)
 {
         printf(GREEN "\n BEGINING %s TEST\n\n" RESET, test_name);
-        sleep(500);
+        btt_sleep(500);
 }
 
 void assert(bool success, char * method)
@@ -34,7 +34,7 @@ void assert(bool success, char * method)
         (success) ?
         printf(GREEN "\t - %s method %s ..............................     SUCCESS \n" RESET, method, spaces) :
         fprintf(stderr, RED "\t - %s method %s ..............................     FAIL \n" RESET, method, spaces);
-        sleep(500);
+        btt_sleep(500);
 }
 
 void end_test_title(char * test_name)
