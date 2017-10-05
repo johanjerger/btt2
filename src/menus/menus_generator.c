@@ -4,6 +4,7 @@
 #include "includes/menus_shows.h"
 #include "includes/menus_options_change.h"
 #include "../options/includes/options_generator.h"
+#include "../keymaps/includes/keymaps.h"
 
 menu * new_menu(char * title, options_list * options, int (*show_menu)(menu *))
 {
@@ -36,5 +37,7 @@ menu * new_main_menu()
 
         options_list * main_menu_options = new_options_list(options, size);
 
-        return new_menu("MAIN MENU", main_menu_options, &show_main_menu);
+        menu * main_menu = new_menu("MAIN MENU", main_menu_options, &show_main_menu);
+
+        return main_menu;
 }
