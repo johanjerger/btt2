@@ -40,28 +40,28 @@ int btt_sleep(int time)
 
 char kbhit()
 {
-  struct termios oldt, newt;
-  char ch[20];
-  short oldf;
+        struct termios oldt, newt;
+        char ch[20];
+        short oldf;
 
-  tcgetattr(STDIN_FILENO, &oldt);
-  newt = oldt;
-  newt.c_lflag &= ~(ICANON | ECHO);
-  tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-  oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
-  fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+        tcgetattr(STDIN_FILENO, &oldt);
+        newt = oldt;
+        newt.c_lflag &= ~(ICANON | ECHO);
+        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+        oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+        fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
 
-  if(!(scanf("%s", ch))){
-    fprintf(stderr, "error -> %d\n", EIO);
-    exit(1);
-  }
+        if(!(scanf("%s", ch))) {
+                fprintf(stderr, "error -> %d\n", EIO);
+                exit(1);
+        }
 
-  tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-  fcntl(STDIN_FILENO, F_SETFL, oldf);
+        tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+        fcntl(STDIN_FILENO, F_SETFL, oldf);
 
-  if(ch[0] != EOF){
-    return ch[0];
-  }
+        if(ch[0] != EOF) {
+                return ch[0];
+        }
 
-  return 0;
+        return 0;
 }
