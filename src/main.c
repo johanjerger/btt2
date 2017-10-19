@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "menus/includes/menus.h"
 #include "keymaps/includes/keymaps.h"
 #include "utilities/includes/inputs.h"
@@ -11,7 +12,7 @@ int main()
 
         main_menu->show_menu(main_menu);
 
-        while(1) {
+        while(true) {
                 char key;
 
                 key = getch();
