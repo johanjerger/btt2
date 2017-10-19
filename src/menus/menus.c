@@ -3,7 +3,6 @@
 #include "includes/menus.h"
 #include "includes/menus_shows.h"
 #include "includes/menus_options_change.h"
-#include "../keymaps/includes/keymaps.h"
 
 menu * new_menu(char * title, options_list * options, int (*show_menu)(menu *))
 {
