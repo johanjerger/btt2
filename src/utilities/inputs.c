@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
-#include "includes/utilities.h"
+#include "includes/inputs.h"
 
 
 char getch(void)
@@ -24,7 +24,8 @@ char getch(void)
 char kbhit()
 {
         struct termios oldt, newt;
-        char ch[20];
+        char out;
+        char * ch = (char *) malloc(KBHIT_BUFFER);
         short oldf;
 
         tcgetattr(STDIN_FILENO, &oldt);
@@ -42,5 +43,9 @@ char kbhit()
         tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
         fcntl(STDIN_FILENO, F_SETFL, oldf);
 
-        return ch[0];
+        out = ch[0];
+
+        free(ch);
+
+        return out;
 }
