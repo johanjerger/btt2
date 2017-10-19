@@ -7,9 +7,9 @@
 
 * **_Linked-lists_** to perform data representation in a more _cleaning_ and _performance_ way. 
 
-* **_hashmaps_** to avoid _switch_ structures.
+* **_Hashmaps_** to avoid _switch_ structures.
 
-* **_component oriented_** like programming mixing _structs_ and _function pointers_.
+* **_Component oriented_** like programming mixing _structs_ and _function pointers_.
 
 * **_Anti-if_** way of thinking. (know more [here][3])
 
