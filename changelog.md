@@ -9,6 +9,7 @@
    * [27/09/2017][4]
    * [04/10/2017][5]
    * [05/10/2017][6]
+   * [19/10/2017][7]
 
 #### Initial commit
 
@@ -56,6 +57,12 @@
   * Menus execute method added.
   * Infrastructure changed.
   * Methods desacoplated in utilities.c file.
+  
+#### 19/10/2017
+
+  * Code refactored.
+  * Changed the makefile with control structures.
+  * Added stdbool and deleted unnecessary libraries.
 
 [1]: https://github.com/johanjerger/btt2/blob/master/changelog.md#initial-commit
 [2]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04092017
@@ -63,3 +70,4 @@
 [4]: https://github.com/johanjerger/btt2/blob/master/changelog.md#27092017
 [5]: https://github.com/johanjerger/btt2/blob/master/changelog.md#04102017
 [6]: https://github.com/johanjerger/btt2/blob/master/changelog.md#05102017
+[7]: https://github.com/johanjerger/btt2/blob/master/changelog.md#19102017
