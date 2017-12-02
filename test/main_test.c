@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "include/test.h"
 #include "include/character_test.h"
-#include "include/options_test.h"
-#include "include/options_list_test.h"
-#include "include/menus_test.h"
-#include "include/keymaps_test.h"
+#include "include/option_test.h"
+#include "include/option_list_test.h"
+#include "include/menu_test.h"
+#include "include/keymap_test.h"
 #include "../src/utility/include/color.h"
 #include "../src/utility/include/utility.h"
 
@@ -21,13 +21,13 @@ int main()
 
         character_test();
 
-        options_test();
+        option_test();
 
-        options_list_test();
+        option_list_test();
 
-        keymaps_test();
+        keymap_test();
 
-        menus_test();
+        menu_test();
 
         make_footer();
 

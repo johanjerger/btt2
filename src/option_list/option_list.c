@@ -1,48 +1,25 @@
 #include <stdlib.h>
-#include "includes/options_list.h"
-#include "../utilities/includes/utilities.h"
+#include "include/option_list.h"
+#include "include/option_list_append.h"
+#include "../option/include/option.h"
+#include "../utility/include/utility.h"
 
-options_list * new_options_list(option ** options, int size)
+option_list_t * new_option_list(option_t * opt)
 {
-        size--;
-        options_list * new_options_list[size];
+        option_list_t * new_option_list;
 
-        for(int i = 0; i <= size; i++) {
-                new_options_list[i] = malloc(sizeof(options_list));
-        }
+        new_option_list = malloc(sizeof(option_list_t));
+        new_option_list->option = opt;
+        new_option_list->next = NULL;
+        new_option_list->previous = NULL;
+        new_option_list->append = option_list_append;
 
-        new_options_list[0]->option = options[0];
-        new_options_list[0]->next_option = new_options_list[1];
-        new_options_list[0]->previous_option = new_options_list[size];
-
-        for(int i = 1; i < size; i++) {
-                new_options_list[i]->option = options[i];
-                new_options_list[i]->next_option = new_options_list[i+1];
-                new_options_list[i]->previous_option = new_options_list[i-1];
-        }
-
-        new_options_list[size]->option = options[size];
-        new_options_list[size]->next_option = new_options_list[0];
-        new_options_list[size]->previous_option = new_options_list[size - 1];
-
-        return new_options_list[0];
+        return new_option_list;
 }
 
-
-int auxiliar_option_function()
+option_list_t * new_main_menu_options_list()
 {
-        return 0;
-}
-
-
-options_list * new_main_menu_options_list()
-{
-        int size = 3;
-        option * options[size];
-
-        options[0] = selected_option("START", &auxiliar_option_function);
-        options[1] = unselected_option("CONFIGURATION", &auxiliar_option_function);
-        options[2] = unselected_option("EXIT", &go_out);
-
-        return new_options_list(options, size);
+        option_list_t * option_list = new_option_list(selected_option("START", &go_out));
+        option_list->append(option_list, unselected_option("EXIT", &go_out));
+        return option_list;
 }

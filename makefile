@@ -7,15 +7,15 @@ INSTALL_FOLDER=/usr/bin
 DEBUG= -g
 CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 
-btt2_characters = characters characters_moves characters_attacks
-btt2_options = options options_shows
-btt2_options_list = options_list
-btt2_menus = menus menus_shows menus_options_change menus_execute
-btt2_keymaps = keymaps keymaps_exec
-btt2_utilities = utilities inputs
+btt2_character = character character_move character_attack
+btt2_option = option option_show
+btt2_option_list = option_list
+btt2_menu = menu menu_show menu_option_change menu_execute
+btt2_keymap = keymap keymap_exec
+btt2_utility = utility input
 
-btt2_tests = main_test test characters_test options_test \
-										options_list_test menus_test keymaps_test
+btt2_test = main_test test character_test option_test \
+										option_list_test menu_test keymap_test
 
 .PHONY: all clean clean-test folders install uninstall reinstall lines test test-run
 .IGNORE: clean clean-test
@@ -32,33 +32,33 @@ main.o: btt.o
 
 btt.o:
 		#CHARACTERS
-		for file in $(btt2_characters); do \
-		gcc -c $(SOURCE_FOLDER)/characters/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+		for file in $(btt2_character); do \
+		gcc -c $(SOURCE_FOLDER)/character/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 		#OPTIONS
-		for file in $(btt2_options); do \
-		gcc -c $(SOURCE_FOLDER)/options/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+		for file in $(btt2_option); do \
+		gcc -c $(SOURCE_FOLDER)/option/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 		#OPTIONS LIST
-		for file in $(btt2_options_list); do \
-		gcc -c $(SOURCE_FOLDER)/options_list/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+		for file in $(btt2_option_list); do \
+		gcc -c $(SOURCE_FOLDER)/option_list/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 		#MENUS
-		for file in $(btt2_menus); do \
-		gcc -c $(SOURCE_FOLDER)/menus/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+		for file in $(btt2_menu); do \
+		gcc -c $(SOURCE_FOLDER)/menu/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 		#KEYMAPS
-		for file in $(btt2_keymaps); do \
-		gcc -c $(SOURCE_FOLDER)/keymaps/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+		for file in $(btt2_keymap); do \
+		gcc -c $(SOURCE_FOLDER)/keymap/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 		#UTILITIES
-		for file in $(btt2_utilities); do \
-		gcc -c $(SOURCE_FOLDER)/utilities/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+		for file in $(btt2_utility); do \
+		gcc -c $(SOURCE_FOLDER)/utility/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 
 test.o: btt.o
 		#TEST CLASES
-		for file in $(btt2_tests); do \
+		for file in $(btt2_test); do \
 		gcc -c $(TEST_FOLDER)/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "includes/utilities.h"
-#include "includes/colors.h"
+#include "include/utility.h"
+#include "include/color.h"
 
 
 int clear()
@@ -36,7 +36,7 @@ int btt_sleep(int time)
 }
 
 
-int go_out()
+void go_out()
 {
         exit(0);
 }

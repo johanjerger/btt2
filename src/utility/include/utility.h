@@ -5,6 +5,6 @@
 
   int btt_sleep(int);
 
-  int go_out();
+  void go_out();
 
 #endif

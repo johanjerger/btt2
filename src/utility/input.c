@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
-#include "includes/inputs.h"
+#include "include/input.h"
 
 
 char getch(void)
