@@ -7,17 +7,17 @@
  *  in the matrix and how its moves and attacks.
  */
 
-typedef struct _character
-{
-  char body;
-  int posX;
-  int posY;
-  int(*move)(struct _character *);
-  int(*attack)(struct _character *);
-} character;
+  typedef struct _character
+  {
+    char body;
+    int pos_x;
+    int pos_y;
+    int (*move) (struct _character *);
+    int (*attack) (struct _character *);
+  } character;
 
-character * drugo(int,int);
+  character * drugo (int, int);
 
-character * pterodactyl(int,int);
+  character * pterodactyl (int, int);
 
 #endif

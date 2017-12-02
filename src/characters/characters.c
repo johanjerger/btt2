@@ -12,15 +12,16 @@
  */
 
 character * generate_character(char body, int x, int y,
-                               int (*move)(character *), int (*attack)(character *))
+                               int (*move)(character *),
+                               int (*attack)(character *))
 {
         // Abtract generation method. Never used directly.
 
         character * new_character = malloc(sizeof(character));
 
         new_character->body = body;
-        new_character->posX = x;
-        new_character->posY = y;
+        new_character->pos_x = x;
+        new_character->pos_y = y;
         new_character->move = move;
         new_character->attack = attack;
 

@@ -9,7 +9,7 @@
 
 int move_drugo(character * drugo)
 {
-        drugo->posX = 4;
+        drugo->pos_x = 4;
         return 8;
 }
 
