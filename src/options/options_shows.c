@@ -8,13 +8,13 @@
  *  shows.
  */
 
-void show_option_unselected(option * opt)
+void show_unselected_option(option * opt)
 {
         printf("%s\n", opt->text);
 }
 
 
-void show_option_selected(option * opt)
+void show_selected_option(option * opt)
 {
         printf(YELLOW "%s\n" RESET, opt->text);
 }

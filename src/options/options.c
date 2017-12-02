@@ -4,7 +4,15 @@
 #include "includes/options.h"
 #include "includes/options_shows.h"
 
-option * new_option (char * text, void (*show_option)(option *), int (*active_option)(option *))
+/*
+ *  This file defines the game's options,
+ *  developing his representations and
+ *  defining some constructors to improve the
+ *  easy understanding of the code.
+ */
+
+option * new_option (char * text, void (*show_function)(option *),
+                                  int (*action_function)(option *))
 {
         //  Abtract generate method. Never used directly.
 
@@ -12,18 +20,18 @@ option * new_option (char * text, void (*show_option)(option *), int (*active_op
 
         new_option->text = (char *) malloc(strlen(text) + 1);
         strcpy(new_option->text, text);
-        new_option->show_option = show_option;
-        new_option->active_option = active_option;
+        new_option->show = show_function;
+        new_option->action = action_function;
 
         return new_option;
 }
 
-option * unselected_option(char * text, int (*active_option)())
+option * unselected_option(char * text, int (*action_function)())
 {
-        return new_option(text, show_option_unselected, active_option);
+        return new_option(text, show_unselected_option, action_function);
 }
 
-option * selected_option(char * text, int (*active_option)())
+option * selected_option(char * text, int (*action_function)())
 {
-        return new_option(text, show_option_selected, active_option);
+        return new_option(text, show_selected_option, action_function);
 }
