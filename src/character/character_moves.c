@@ -1,20 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "includes/characters.h"
+#include "include/character.h"
 
 /*
  *  This modules defines the game's characters
  *  moves, everyone moves with a different strategy.
  */
 
-int move_drugo(character * drugo)
+int drugo_move (character * drugo)
 {
         drugo->pos_x = 4;
         return 8;
 }
 
 
-int move_pterodactyl(character * pterodactyl)
+int pterodactyl_move (character * pterodactyl)
 {
         return 0;
 }

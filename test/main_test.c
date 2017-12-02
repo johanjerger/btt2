@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "includes/test.h"
-#include "includes/characters_test.h"
-#include "includes/options_test.h"
-#include "includes/options_list_test.h"
-#include "includes/menus_test.h"
-#include "includes/keymaps_test.h"
-#include "../src/utilities/includes/colors.h"
-#include "../src/utilities/includes/utilities.h"
+#include "include/test.h"
+#include "include/character_test.h"
+#include "include/options_test.h"
+#include "include/options_list_test.h"
+#include "include/menus_test.h"
+#include "include/keymaps_test.h"
+#include "../src/utility/include/color.h"
+#include "../src/utility/include/utility.h"
 
 /*
  * This is the test main function,
@@ -19,7 +19,7 @@ int main()
 {
         make_header();
 
-        characters_test();
+        character_test();
 
         options_test();
 

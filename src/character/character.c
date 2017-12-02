@@ -1,8 +1,7 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include "includes/characters.h"
-#include "includes/characters_moves.h"
-#include "includes/characters_attacks.h"
+#include "include/character.h"
+#include "include/character_move.h"
+#include "include/character_attack.h"
 
 /*
  *  This modules defines the game's characters,
@@ -11,7 +10,7 @@
  *  easy understanding of the code.
  */
 
-character * generate_character(char body, int x, int y,
+character * generate_character (char body, int x, int y,
                                int (*move)(character *),
                                int (*attack)(character *))
 {
@@ -29,12 +28,12 @@ character * generate_character(char body, int x, int y,
 
 }
 
-character * drugo(int x, int y)
+character * drugo (int x, int y)
 {
-        return generate_character('#', x, y, &move_drugo, &attack_drugo);
+        return generate_character('#', x, y, &drugo_move, &drugo_attack);
 }
 
-character * pterodactyl(int x, int y)
+character * pterodactyl (int x, int y)
 {
-        return generate_character('<', x, y, &move_pterodactyl, &attack_pterodactyl);
+        return generate_character('<', x, y, &pterodactyl_move, &pterodactyl_attack);
 }

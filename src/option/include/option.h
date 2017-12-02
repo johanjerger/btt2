@@ -1,5 +1,5 @@
-#ifndef BTT2_OP_H
-#define BTT2_OP_H
+#ifndef BTT2_OPT_H
+#define BTT2_OPT_H
 
 /*
  *  Struct that contains the attributes of an option
@@ -12,10 +12,12 @@
     char * text;
     void (*show) (struct _option *);
     void (*action) ();
-  } option;
+    void (*select) ();
+    void (*unselect) ();
+  } option_t;
 
-  option * unselected_option (char * text, void (*action) ());
+  option_t * unselected_option (char * text, void (*action) ());
 
-  option * selected_option (char * text, void (*action) ());
+  option_t * selected_option (char * text, void (*action) ());
 
 #endif

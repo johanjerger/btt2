@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../src/utilities/includes/colors.h"
-#include "../src/utilities/includes/utilities.h"
+#include "../src/utility/include/color.h"
+#include "../src/utility/include/utility.h"
 
 void make_header()
 {

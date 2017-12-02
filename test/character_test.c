@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "includes/test.h"
-#include "../src/characters/includes/characters.h"
-#include "../src/characters/includes/characters_attacks.h"
-#include "../src/characters/includes/characters_moves.h"
+#include "include/test.h"
+#include "../src/character/include/character.h"
+#include "../src/character/include/character_attack.h"
+#include "../src/character/include/character_move.h"
 
-int characters_test()
+int character_test()
 {
         int pos_x = 2, pos_y = 5;
         character * new_drugo = drugo(pos_x, pos_y);
