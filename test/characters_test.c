@@ -7,17 +7,17 @@
 
 int characters_test()
 {
-        int posX = 2, posY = 5;
-        character * new_drugo = drugo(posX, posY);
-        character * new_pterodactyl = pterodactyl(posX, posY);
+        int pos_x = 2, pos_y = 5;
+        character * new_drugo = drugo(pos_x, pos_y);
+        character * new_pterodactyl = pterodactyl(pos_x, pos_y);
 
         make_test_title("characters");
 
         assert(new_drugo->body == '#' && new_pterodactyl->body == '<', "body");
 
-        assert(new_drugo->posX == posX && new_pterodactyl->posX == posX, "posX");
+        assert(new_drugo->pos_x == pos_x && new_pterodactyl->pos_x == pos_x, "pos_x");
 
-        assert(new_drugo->posY == posY && new_pterodactyl->posY == posY, "posY");
+        assert(new_drugo->pos_y == pos_y && new_pterodactyl->pos_y == pos_y, "pos_y");
 
         assert(new_drugo->move(new_drugo) == move_drugo(new_drugo), "move");
 
