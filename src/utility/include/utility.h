@@ -1,9 +1,9 @@
 #ifndef BTT2_UTL_H
 #define BTT2_UTL_H
 
-  int clear();
+  void clear();
 
-  int btt_sleep(int);
+  void btt_sleep(int);
 
   void go_out();
 

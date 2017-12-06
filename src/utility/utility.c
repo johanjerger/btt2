@@ -5,25 +5,25 @@
 #include "include/color.h"
 
 
-int clear()
+void check_error(void * value, void * error, int error_code, char * error_msg)
+{
+  if(value == error) {
+    fprintf(stderr, RED "error -> %d\nmsg  -> %s" RESET, error_code, error_msg);
+    exit(error_code);
+  }
+}
+
+void clear()
 {
         btt_sleep(25);
         if((system("clear")) == -1) {
                 fprintf(stderr, RED "Error calling system \"clear\" function\n" RESET);
         }
-
-        return 0;
 }
 
 
-int btt_sleep(int time)
+void btt_sleep(int time)
 {
-        /*
-           timespec struct is use for
-           every "sleep" time during
-           the game.
-         */
-
         struct timespec ts;
         ts.tv_sec = time / 1000;
         ts.tv_nsec = (time % 1000) * 1000000;
@@ -31,8 +31,6 @@ int btt_sleep(int time)
         if((nanosleep(&ts, NULL)) == -1) {
                 fprintf(stderr, RED "Error calling stdlib \"nanosleep\" function\n" RESET);
         }
-
-        return 0;
 }
 
 

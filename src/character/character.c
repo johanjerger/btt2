@@ -10,13 +10,17 @@
  *  easy understanding of the code.
  */
 
-character * generate_character (char body, int x, int y,
-                               int (*move)(character *),
-                               int (*attack)(character *))
+character_t * generate_character (uint8_t body, uint16_t x, uint16_t y,
+                                  int (*move)(character_t *),
+                                  int (*attack)(character_t *))
 {
         // Abtract generation method. Never used directly.
 
-        character * new_character = malloc(sizeof(character));
+        character_t * new_character = (character_t *) malloc(sizeof(character_t));
+        if (new_character == NULL) {
+          fprintf( stderr, "error -> %d \n msg   -> %s", MALLOC_ERROR, MALLOC_ERROR_MSG_CHARACTER);
+          exit(MALLOC_ERROR);
+        }
 
         new_character->body = body;
         new_character->pos_x = x;
@@ -28,12 +32,12 @@ character * generate_character (char body, int x, int y,
 
 }
 
-character * drugo (int x, int y)
+character_t * drugo (uint16_t x, uint16_t y)
 {
         return generate_character('#', x, y, &drugo_move, &drugo_attack);
 }
 
-character * pterodactyl (int x, int y)
+character_t * pterodactyl (uint16_t x, uint16_t y)
 {
         return generate_character('<', x, y, &pterodactyl_move, &pterodactyl_attack);
 }
