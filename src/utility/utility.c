@@ -8,7 +8,8 @@
 void check_error(void * value, void * error, int error_code, char * error_msg)
 {
   if(value == error) {
-    fprintf(stderr, RED "error -> %d\nmsg  -> %s" RESET, error_code, error_msg);
+    fprintf(stderr, RED "error -> %d\nmsg  -> %s\n" RESET,
+            error_code, error_msg);
     exit(error_code);
   }
 }
