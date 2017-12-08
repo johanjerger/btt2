@@ -13,8 +13,8 @@ menu_t * new_menu(char * title, option_list_t * options, int (*show_menu)(menu_t
         new_menu->options = options;
         new_menu->selected_option = options;
         new_menu->show = show_menu;
-        new_menu->next_option = &select_next_option;
-        new_menu->previous_option = &select_previous_option;
+        new_menu->next_option = select_next_option;
+        new_menu->previous_option = select_previous_option;
 
         return new_menu;
 }

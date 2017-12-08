@@ -15,7 +15,7 @@ keymap_t * new_keymap(char * keys, void (**actions)(), int size)
                 new_keymap[i] = (keymap_t *) malloc(sizeof(keymap_t));
                 new_keymap[i]->key = keys[i];
                 new_keymap[i]->action = actions[i];
-                new_keymap[i]->exec = &execute_keymap_action;
+                new_keymap[i]->exec = execute_keymap_action;
         }
 
         for(i = 0; i < size-1; i++) {

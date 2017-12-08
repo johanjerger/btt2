@@ -7,12 +7,11 @@
 int show_main_menu(menu_t * main_menu)
 {
         option_list_t head = *(main_menu->options);
-        option_list_t * first_option = main_menu->options;
 
         clear();
         printf("%s\n", main_menu->title);
 
-        while(head.next != first_option) {
+        while(head.next != NULL) {
                 (head.option)->show(head.option);
                 head = *(head.next);
         }

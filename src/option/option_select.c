@@ -8,12 +8,12 @@
  *  select.
  */
 
-void select_option(option_t * opt)
+void select_option(option_t * option)
 {
         option->show = show_selected_option;
 }
 
-void unselect_option(option_t * opt)
+void unselect_option(option_t * option)
 {
         option->show = show_unselected_option;
 }

@@ -1,52 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "includes/test.h"
+#include "include/test.h"
 #include "../src/option/include/option.h"
 #include "../src/option_list/include/option_list.h"
 
-int some_function()
+void some_function()
 {
-        return 10;
+        return;
 }
 
 int option_list_test()
 {
-        option * option1, * option2, * option3;
+        option_t * option1, * option2, * option3;
 
-        options1 = selected_option("START", &some_function);
-        options2 = unselected_option("CONFIGURATION", &some_function);
-        options3 = unselected_option("EXIT", &some_function);
+        option1 = selected_option("START", &some_function);
+        option2 = unselected_option("CONFIGURATION", &some_function);
+        option3 = unselected_option("EXIT", &some_function);
 
-        option_list_t * option_list_test = new_option_list(options1);
-        option_list_test->append(option2);
-        option_list_test->append(option3)
+        option_list_t * option_list_test = new_option_list(option1);
+        option_list_test->append(option_list_test, option2);
+        option_list_test->append(option_list_test, option3);
 
         make_test_title("option_list");
 
         option_list_t * next = option_list_test->next;
-        option_list_t * previous = option_list_test->previous;
+        option_list_t * last = option_list_test->next->next;
 
-        assert(strcmp(option_list_test->option->text, options[0]->text) == 0 &&
-               strcmp(next->option->text, options[1]->text) == 0 &&
-               strcmp(previous->option->text, options[2]->text) == 0
+        assert(strcmp(option_list_test->option->text, option1->text) == 0 &&
+               strcmp(next->option->text, option2->text) == 0 &&
+               strcmp(last->option->text, option3->text) == 0
                , "text");
 
-        assert(option_list_test->option->show_option == options[0]->show_option &&
-               next->option->show_option == options[1]->show_option &&
-               previous->option->show_option == options[2]->show_option
+        assert(option_list_test->option->show == option1->show &&
+               next->option->show == option2->show &&
+               last->option->show == option3->show
                , "show");
 
-        assert(option_list_test->option->active_option() == options[0]->active_option() &&
-               next->option->active_option() == options[1]->active_option() &&
-               previous->option->active_option() == options[2]->active_option()
+        assert(option_list_test->option->action == option1->action &&
+               next->option->action == option2->action &&
+               last->option->action == option3->action
                , "active");
 
         end_test_title("option_list");
 
-        free(options[0]);
-        free(options[1]);
-        free(options[2]);
+        free(option1);
+        free(option2);
+        free(option3);
         free(option_list_test);
 
         return 0;

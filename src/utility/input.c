@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <termios.h>
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
+#include "include/error.h"
+#include "include/utility.h"
 #include "include/input.h"
 
 
@@ -17,7 +20,7 @@ char getch(void)
         tcsetattr(1, TCSANOW, &newattr);
         ch = getchar();
         tcsetattr(1, TCSANOW, &oldattr);
-        return ch;
+        return tolower(ch);
 }
 
 
@@ -47,5 +50,5 @@ char kbhit()
 
         free(ch);
 
-        return out;
+        return tolower(out);
 }

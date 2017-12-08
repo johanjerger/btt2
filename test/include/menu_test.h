@@ -1,6 +1,6 @@
 #ifndef BTT2_MN_TEST_H
 #define BTT2_MN_TEST_H
 
-  int menus_test();
+  int menu_test();
 
 #endif

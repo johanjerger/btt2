@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include "../utility/include/utility.h"
+#include "../utility/include/error.h"
 #include "include/character.h"
 #include "include/character_move.h"
 #include "include/character_attack.h"
@@ -17,10 +19,7 @@ character_t * generate_character (uint8_t body, uint16_t x, uint16_t y,
         // Abtract generation method. Never used directly.
 
         character_t * new_character = (character_t *) malloc(sizeof(character_t));
-        if (new_character == NULL) {
-          fprintf( stderr, "error -> %d \n msg   -> %s", MALLOC_ERROR, MALLOC_ERROR_MSG_CHARACTER);
-          exit(MALLOC_ERROR);
-        }
+        check_error(new_character, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_CHARACTER);
 
         new_character->body = body;
         new_character->pos_x = x;

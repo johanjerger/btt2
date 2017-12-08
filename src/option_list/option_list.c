@@ -20,6 +20,7 @@ option_list_t * new_option_list(option_t * opt)
 option_list_t * new_main_menu_options_list()
 {
         option_list_t * option_list = new_option_list(selected_option("START", &go_out));
+        option_list->append(option_list, unselected_option("CONFIG", &go_out));
         option_list->append(option_list, unselected_option("EXIT", &go_out));
         return option_list;
 }

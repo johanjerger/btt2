@@ -8,8 +8,8 @@ DEBUG= -g
 CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 
 btt2_character = character character_move character_attack
-btt2_option = option option_show
-btt2_option_list = option_list
+btt2_option = option option_show option_select
+btt2_option_list = option_list option_list_append
 btt2_menu = menu menu_show menu_option_change menu_execute
 btt2_keymap = keymap keymap_exec
 btt2_utility = utility input

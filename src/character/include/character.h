@@ -18,8 +18,8 @@
     int (*attack) (struct _character *);
   } character_t;
 
-  character_t * drugo (int, int);
+  character_t * drugo (uint16_t, uint16_t);
 
-  character_t * pterodactyl (int, int);
+  character_t * pterodactyl (uint16_t, uint16_t);
 
 #endif

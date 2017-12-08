@@ -11,7 +11,7 @@
     void (*append) (struct _option_list *, option_t *);
   } option_list_t;
 
-  option_list_t * new_option_list ();
+  option_list_t * new_option_list(option_t *);
 
   option_list_t * new_main_menu_options_list();
 
