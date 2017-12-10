@@ -16,8 +16,4 @@
     void (*unselect) (struct _option *);
   } option_t;
 
-  option_t * unselected_option (char * text, void (*action) ());
-
-  option_t * selected_option (char * text, void (*action) ());
-
 #endif
