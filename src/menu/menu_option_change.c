@@ -2,16 +2,16 @@
 #include "include/menu.h"
 #include "../option/include/option_show.h"
 
-void select_next_option(menu_t * actual_menu)
+// menu->selected_option->select_next(menu->selected_option);
+
+void select_next_option(menu_t * menu)
 {
-        actual_menu->selected_option->option->unselect(actual_menu->selected_option->option);
-        actual_menu->selected_option = actual_menu->selected_option->next;
-        actual_menu->selected_option->option->select(actual_menu->selected_option->option);
+        menu->selected_option->select_next(menu->selected_option);
+        menu->selected_option = menu->selected_option->next;
 }
 
-void select_previous_option(menu_t * actual_menu)
+void select_previous_option(menu_t * menu)
 {
-        actual_menu->selected_option->option->unselect(actual_menu->selected_option->option);
-        actual_menu->selected_option = actual_menu->selected_option->previous;
-        actual_menu->selected_option->option->select(actual_menu->selected_option->option);
+        menu->selected_option->select_previous(menu->selected_option);
+        menu->selected_option = menu->selected_option->previous;
 }
