@@ -28,7 +28,8 @@ This game attends to has a strong standard, maintain a really nice [change-log][
    ```
    $ git clone https://github.com/johanjerger/btt2
    $ cd btt2
-   $ make compile_install
+   $ make compile
+   $ make install
    $ make clean
    ```
   
