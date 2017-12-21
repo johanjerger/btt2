@@ -18,7 +18,9 @@ option_t * new_option (char * text, void (*action_function)())
 {
         //  Abtract generate method. Never used directly.
 
-        option_t * new_option = malloc(sizeof(option_t));
+        option_t * new_option;
+
+        new_option = (option_t *) malloc(sizeof(option_t));
         check_error(new_option, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_OPTION);
 
         new_option->text = (char *) malloc(strlen(text) + 1);
