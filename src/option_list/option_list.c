@@ -11,7 +11,9 @@ option_list_t * new_option_list(option_t * opt)
         option_list_t * new_option_list;
 
         new_option_list = (option_list_t *) malloc(sizeof(option_list_t));
-        check_error(new_option_list, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_OPTION_LIST);
+        check_error(new_option_list, NULL, MALLOC_ERROR,
+                    MALLOC_ERROR_MSG_OPTION_LIST);
+
         new_option_list->option = opt;
         new_option_list->next = new_option_list;
         new_option_list->previous = new_option_list;

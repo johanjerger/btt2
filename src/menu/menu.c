@@ -6,7 +6,8 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 
-menu_t * new_menu(char * title, option_list_t * options, int (*show_menu)(menu_t *))
+menu_t * new_menu(char * title, option_list_t * options,
+                  int (*show_menu)(menu_t *))
 {
         menu_t * new_menu;
 
@@ -14,8 +15,9 @@ menu_t * new_menu(char * title, option_list_t * options, int (*show_menu)(menu_t
         check_error(new_menu, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_MENU);
 
         new_menu->title = (char *) malloc(strlen(title) + 1);
-        check_error(new_menu->title, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_MENU_TITLE);
-        
+        check_error(new_menu->title, NULL, MALLOC_ERROR,
+                    MALLOC_ERROR_MSG_MENU_TITLE);
+
         strcpy(new_menu->title, title);
         new_menu->options = options;
         new_menu->selected_option = options;

@@ -21,19 +21,19 @@ void make_test_title(char * test_name)
         btt_sleep(500);
 }
 
-void assert(bool success, char * method)
+void assert(bool success, char * function)
 {
-        // assert method to avoid the duplicate code in tests...
+        // assert function to avoid the duplicate code in tests...
 
         // the spaces variable is only for output purpose
         char spaces[] = "          ";
-        int size_of_spaces = strlen(spaces) - strlen(method);
+        int size_of_spaces = strlen(spaces) - strlen(function);
         spaces[size_of_spaces] = '\0';
 
         // printing the test result.
         (success) ?
-        printf(GREEN "\t - %s method %s ..............................     SUCCESS \n" RESET, method, spaces) :
-        fprintf(stderr, RED "\t - %s method %s ..............................     FAIL \n" RESET, method, spaces);
+        printf(GREEN "\t - %s function %s ..............................     SUCCESS \n" RESET, function, spaces) :
+        fprintf(stderr, RED "\t - %s function %s ..............................     FAIL \n" RESET, function, spaces);
         btt_sleep(500);
 }
 

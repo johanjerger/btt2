@@ -7,7 +7,7 @@ void option_list_append(option_list_t * opt_list, option_t * opt)
         option_list_t * head = opt_list;
 
         while (head->next != head) {
-          head = head->next;
+                head = head->next;
         }
 
         head->next = new_element;

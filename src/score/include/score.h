@@ -7,7 +7,7 @@
   typedef struct _score
   {
     char * player_name;
-    uint32_t score;
+    uint32_t points;
     int level;
     bool (*compare) (struct _score *, struct _score *);
     void (*show) (struct _score *);
