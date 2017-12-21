@@ -2,6 +2,8 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/score.h"
+#include "include/score_compare.h"
+#include "include/score_show.h"
 
 
 score_t * new_score(char * player_name, uint32_t points, int level)
@@ -17,6 +19,9 @@ score_t * new_score(char * player_name, uint32_t points, int level)
         strcpy(new_score->player_name, player_name);
         new_score->points = points;
         new_score->level = level;
+
+        new_score->compare = score_compare;
+        new_score->show = score_show;
 
         return new_score;
 }

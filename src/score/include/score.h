@@ -9,7 +9,7 @@
     char * player_name;
     uint32_t points;
     int level;
-    bool (*compare) (struct _score *, struct _score *);
+    int (*compare) (const void *, const void *);
     void (*show) (struct _score *);
   } score_t;
 
