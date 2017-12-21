@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "include/score.h"
 
-score_t score_read (FILE * score_table_file)
+score_t * score_read (FILE * score_table_file)
 {
-        score_t * score;
+        score_t * score = NULL;
         fread(score, sizeof(score_t), 1, score_table_file);
         return score;
 }

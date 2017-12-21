@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/score_table.h"
