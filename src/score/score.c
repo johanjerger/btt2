@@ -12,7 +12,7 @@ score_t * new_score(char * player_name, uint32_t points, int level)
         check_error(new_score, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE);
 
         new_score->player_name = (char *) malloc(sizeof(name) + 1);
-        check_error(new_score, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE_PLAYER);
+        check_error(new_score->player_name, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE_PLAYER);
 
         strcpy(new_score->player_name, player_name);
         new_score->points = points;

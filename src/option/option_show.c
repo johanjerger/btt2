@@ -9,11 +9,11 @@
 
 void show_unselected_option(option_t * opt)
 {
-        printf("%s\n", opt->text);
+        printf("\t\t\t\t    %s\n", opt->text);
 }
 
 
 void show_selected_option(option_t * opt)
 {
-        printf(YELLOW "%s\n" RESET, opt->text);
+        printf(YELLOW "\t\t\t\t    %s\n" RESET, opt->text);
 }
