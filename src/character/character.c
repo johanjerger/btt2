@@ -18,7 +18,9 @@ character_t * generate_character (uint8_t body, uint16_t x, uint16_t y,
 {
         // Abtract generation method. Never used directly.
 
-        character_t * new_character = (character_t *) malloc(sizeof(character_t));
+        character_t * new_character;
+
+        new_character = (character_t *) malloc(sizeof(character_t));
         check_error(new_character, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_CHARACTER);
 
         new_character->body = body;
