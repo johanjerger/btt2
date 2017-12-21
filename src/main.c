@@ -13,7 +13,7 @@ int main()
 
         while(true) {
                 char key;
-                key = getch();
+                key = btt_getch();
 
                 main_menu_keymap->exec(main_menu, main_menu_keymap, key);
                 main_menu->show(main_menu);
