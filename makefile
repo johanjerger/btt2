@@ -8,10 +8,12 @@ DEBUG= -g
 CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 
 btt2_character = character character_move character_attack
+btt2_keymap = keymap keymap_exec
+btt2_menu = menu menu_show menu_option_change menu_execute
 btt2_option = option option_show option_select
 btt2_option_list = option_list option_list_append option_list_select
-btt2_menu = menu menu_show menu_option_change menu_execute
-btt2_keymap = keymap keymap_exec
+btt2_score = score score_show score_io score_compare
+btt2_score_table = score_table score_table_add score_table_show score_table_open
 btt2_utility = utility input
 
 btt2_test = main_test test character_test option_test \
@@ -50,6 +52,14 @@ done
 		#KEYMAPS
 		for file in $(btt2_keymap); do \
 		gcc -c $(SOURCE_FOLDER)/keymap/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+done
+		#SCORE
+		for file in $(btt2_score); do \
+		gcc -c $(SOURCE_FOLDER)/score/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+done
+		#SCORE TABLE
+		for file in $(btt2_score_table); do \
+		gcc -c $(SOURCE_FOLDER)/score_table/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 		#UTILITIES
 		for file in $(btt2_utility); do \
