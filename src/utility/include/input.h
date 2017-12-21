@@ -4,8 +4,8 @@
 #define BUFFER_SIZE 256
 #define KBHIT_BUFFER 32
 
-char getch();
+char btt_getch();
 
-char kbhit();
+char btt_kbhit();
 
 #endif
