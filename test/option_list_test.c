@@ -14,9 +14,11 @@ int option_list_test()
 {
         option_t * option1, * option2, * option3;
 
-        option1 = selected_option("START", &some_function);
-        option2 = unselected_option("CONFIGURATION", &some_function);
-        option3 = unselected_option("EXIT", &some_function);
+        option1 = new_option("START", &some_function);
+        option2 = new_option("CONFIGURATION", &some_function);
+        option3 = new_option("EXIT", &some_function);
+
+        option1->select(option1);
 
         option_list_t * option_list_test = new_option_list(option1);
         option_list_test->append(option_list_test, option2);

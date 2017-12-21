@@ -14,8 +14,10 @@ int option_test()
 {
         char * text1 = "START";
         char * text2 = "OPTION";
-        option_t * selected_option_test = selected_option(text1, &test_active_option);
-        option_t * unselected_option_test = unselected_option(text2, &test_active_option);
+        option_t * selected_option_test = new_option(text1, &test_active_option);
+        option_t * unselected_option_test = new_option(text2, &test_active_option);
+
+        selected_option_test->select(selected_option_test);
 
         make_test_title("option");
 
