@@ -3,7 +3,7 @@
 
   void check_error(void *, void *, int, char *);
 
-  void clear();
+  void btt_clear();
 
   void btt_sleep(int);
 

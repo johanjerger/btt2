@@ -8,7 +8,7 @@ int show_main_menu(menu_t * main_menu)
 {
         option_list_t * head = main_menu->options;
 
-        clear();
+        btt_clear();
         printf("%s\n", main_menu->title);
 
         while(head->next != head) {
