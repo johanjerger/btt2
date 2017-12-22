@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "../../score/include/score.h"
 
+#define SCORE_TABLE_PATH "C:\\Users\\juancruz.ocampos\\Documents\\juan\\bttconfig\\"
 #define SCORE_TABLE_SIZE 10
 
   typedef struct _score_table

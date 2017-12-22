@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/score_table.h"
@@ -8,6 +9,7 @@ void score_table_open(score_table_t * score_table, FILE * score_table_file)
 {
         score_table_file = fopen(score_table->file_name, "r+");
         if(score_table_file == NULL) {
+                printf("creating file...\n");
                 score_table_file = fopen(score_table->file_name, "w+");
                 check_error(score_table_file, NULL, CREATE_ERROR,
                             CREATE_ERROR_MSG_SCORE_TABLE);
@@ -17,4 +19,5 @@ void score_table_open(score_table_t * score_table, FILE * score_table_file)
                 }
                 rewind(score_table_file);
         }
+        printf("opened file %s...\n", score_table->file_name);
 }

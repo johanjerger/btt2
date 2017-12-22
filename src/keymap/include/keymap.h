@@ -15,4 +15,6 @@
 
   keymap_t * new_main_menu_keymap ();
 
+  keymap_t * new_scores_keymap();
+
 #endif

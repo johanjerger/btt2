@@ -13,7 +13,7 @@
 void check_error(void * value, void * error, int error_code, char * error_msg)
 {
         if(value == error) {
-                fprintf(stderr, RED "\nerror -> %d\nmsg  -> %s\n" RESET,
+                fprintf(stderr, RED "\nerror -> %d\nmsg   -> %s\n" RESET,
                         error_code, error_msg);
                 exit(error_code);
         }

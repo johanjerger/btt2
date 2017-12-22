@@ -41,3 +41,17 @@ keymap_t * new_main_menu_keymap()
 
         return new_keymap(keys, actions, size);
 }
+
+keymap_t * new_scores_keymap()
+{
+        int size = 3;
+
+        char keys[3] = {'w', 's', (char) 13};
+        void (*actions[3])() = {
+                &select_previous_option,
+                &select_next_option,
+                &execute_menu
+        };
+
+        return new_keymap(keys, actions, size);
+}

@@ -34,3 +34,10 @@ menu_t * new_main_menu()
 
         return new_menu("MAIN MENU", main_menu_options, &show_main_menu);
 }
+
+menu_t * new_scores_menu()
+{
+        option_list_t * scores_options = new_scores_options_list();
+
+        return new_menu("SCORE TABLE", scores_options, &show_scores);
+}
