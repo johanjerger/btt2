@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "include/keymap.h"
-#include "include/keymap_exec.h"
+#include "include/execute.h"
 #include "../menu/include/menu.h"
-#include "../menu/include/menu_option_change.h"
-#include "../menu/include/menu_execute.h"
+#include "../menu/include/change_option.h"
+#include "../menu/include/execute.h"
 
 keymap_t * new_keymap(char * keys, void (**actions)(), int size)
 {

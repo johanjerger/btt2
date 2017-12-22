@@ -14,6 +14,7 @@ typedef struct _option
         void (*action)();
         void (*select)(struct _option *);
         void (*unselect)(struct _option *);
+        void (*destroy)(struct _option *);
 } option_t;
 
 option_t * new_option (char *, void (*actino)());

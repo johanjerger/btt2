@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "include/menu.h"
-#include "include/menu_show.h"
-#include "include/menu_option_change.h"
+#include "include/show.h"
+#include "include/change_option.h"
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 

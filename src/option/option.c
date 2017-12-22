@@ -4,8 +4,9 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/option.h"
-#include "include/option_show.h"
-#include "include/option_select.h"
+#include "include/show.h"
+#include "include/select.h"
+#include "include/destroy.h"
 
 /*
  *  This file defines the game's options,
@@ -29,6 +30,7 @@ option_t * new_option (char * text, void (*action_function)())
         new_option->action = action_function;
         new_option->select = select_option;
         new_option->unselect = unselect_option;
+        new_option->destroy = option_destroy;
 
         return new_option;
 }

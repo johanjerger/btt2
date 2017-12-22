@@ -3,9 +3,9 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/score.h"
-#include "include/score_compare.h"
-#include "include/score_show.h"
-#include "include/score_io.h"
+#include "include/compare.h"
+#include "include/show.h"
+#include "include/io.h"
 
 
 score_t * new_score(char * player_name, uint32_t points, int level)

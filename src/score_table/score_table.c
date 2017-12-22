@@ -4,9 +4,9 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/score_table.h"
-#include "include/score_table_add.h"
-#include "include/score_table_show.h"
-#include "include/score_table_open.h"
+#include "include/add.h"
+#include "include/show.h"
+#include "include/open.h"
 
 score_table_t * new_score_table(char * file_name, char * title)
 {

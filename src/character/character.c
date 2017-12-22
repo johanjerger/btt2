@@ -2,8 +2,8 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "include/character.h"
-#include "include/character_move.h"
-#include "include/character_attack.h"
+#include "include/move.h"
+#include "include/attack.h"
 
 /*
  *  This modules defines the game's characters,

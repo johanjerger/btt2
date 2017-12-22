@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "include/option_list.h"
-#include "include/option_list_append.h"
-#include "include/option_list_select.h"
+#include "include/append.h"
+#include "include/select.h"
 #include "../option/include/option.h"
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
