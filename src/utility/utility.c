@@ -5,6 +5,7 @@
 #elif __unix__
         #include <time.h>
 #endif
+#include "../include/btt2.h"
 #include "include/error.h"
 #include "include/utility.h"
 #include "include/color.h"
@@ -82,5 +83,5 @@ void btt_sleep(int time)
 void go_out()
 {
         btt_clear();
-        exit(0);
+        game = false;
 }
