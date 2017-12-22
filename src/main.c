@@ -20,5 +20,7 @@ int main()
                 main_menu->show(main_menu);
         }
 
+        free(main_menu);
+        free(main_menu_keymap);
         return 0;
 }
