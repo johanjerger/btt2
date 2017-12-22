@@ -9,9 +9,9 @@ CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 
 btt2_character = move attack
 btt2_keymap = execute
-btt2_menu = show change_option execute
+btt2_menu = show change_option execute destroy
 btt2_option = show select destroy
-btt2_option_list = append select
+btt2_option_list = append select destroy
 btt2_score = show io compare
 btt2_score_table = add show open
 btt2_utility = utility input
