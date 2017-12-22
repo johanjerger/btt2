@@ -11,6 +11,7 @@ typedef struct _option_list
         void (*append)(struct _option_list *, option_t *);
         void (*select_next)(struct _option_list *);
         void (*select_previous)(struct _option_list *);
+        void (*destroy)(struct _option_list *);
 } option_list_t;
 
 option_list_t * new_option_list(option_t *);

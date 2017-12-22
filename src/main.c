@@ -20,6 +20,7 @@ int main()
                 main_menu_keymap->exec(main_menu, main_menu_keymap, key);
         }
 
+        main_menu->destroy(main_menu);
         free(main_menu);
         free(main_menu_keymap);
         return 0;

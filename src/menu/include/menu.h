@@ -17,6 +17,7 @@ typedef struct _menu
   int(*show)(struct _menu *);
   void(*next_option)(struct _menu *);
   void(*previous_option)(struct _menu *);
+  void(*destroy)(struct _menu *);
 } menu_t;
 
 menu_t * new_menu(char *, option_list_t *, int(*show_menu)(menu_t *));

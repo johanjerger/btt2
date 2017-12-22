@@ -2,6 +2,7 @@
 #include <string.h>
 #include "include/menu.h"
 #include "include/show.h"
+#include "include/destroy.h"
 #include "include/change_option.h"
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
@@ -24,6 +25,7 @@ menu_t * new_menu(char * title, option_list_t * options,
         new_menu->show = show_menu;
         new_menu->next_option = select_next_option;
         new_menu->previous_option = select_previous_option;
+        new_menu->destroy = menu_destroy;
 
         return new_menu;
 }

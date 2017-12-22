@@ -2,6 +2,7 @@
 #include "include/option_list.h"
 #include "include/append.h"
 #include "include/select.h"
+#include "include/destroy.h"
 #include "../option/include/option.h"
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
@@ -23,6 +24,7 @@ option_list_t * new_option_list(option_t * opt)
         new_option_list->append = option_list_append;
         new_option_list->select_next = option_list_select_next;
         new_option_list->select_previous = option_list_select_previous;
+        new_option_list->destroy = option_list_destroy;
 
         return new_option_list;
 }
