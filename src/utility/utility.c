@@ -21,6 +21,16 @@ void check_error(void * value, void * error, int error_code, char * error_msg)
 }
 
 
+void check_int_error(int value, int error, int error_code, char * error_msg)
+{
+        if(value == error) {
+                fprintf(stderr, RED "\nerror -> %d\nmsg   -> %s\n" RESET,
+                        error_code, error_msg);
+                exit(error_code);
+        }
+}
+
+
 /*
  * This is a generic clear that generate and abstraction
  * no mether if you are in Windows or Unix Systems.
@@ -30,11 +40,7 @@ void check_error(void * value, void * error, int error_code, char * error_msg)
 void btt_clear()
 {
         btt_sleep(25);
-        if((system("cls")) == -1) {
-                fprintf(stderr, RED "\nerror -> %d\nmsg  -> %s\n" RESET,
-                        CLEAR_ERROR, CLEAR_ERROR_MSG);
-                exit(CLEAR_ERROR);
-        }
+        check_int_error(system("cls"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
 }
 
 #elif __unix__
@@ -42,11 +48,7 @@ void btt_clear()
 void btt_clear()
 {
         btt_sleep(25);
-        if((system("clear")) == -1) {
-                fprintf(stderr, RED "\nerror -> %d\nmsg  -> %s\n" RESET,
-                        CLEAR_ERROR, CLEAR_ERROR_MSG);
-                exit(CLEAR_ERROR);
-        }
+        check_int_error(system("clear"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
 }
 
 #endif
@@ -71,11 +73,7 @@ void btt_sleep(int time)
         ts.tv_sec = time / 1000;
         ts.tv_nsec = (time % 1000) * 1000000;
 
-        if((nanosleep(&ts, NULL)) == -1) {
-                fprintf(stderr, RED "\nerror -> %d\nmsg  -> %s\n" RESET,
-                        SLEEP_ERROR, SLEEP_ERROR_MSG);
-                exit(SLEEP_ERROR);
-        }
+        check_int_error(nanosleep(&ts, NULL), -1, SLEEP_ERROR, SLEEP_ERROR_MSG);
 }
 #endif
 
