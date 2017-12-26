@@ -34,13 +34,12 @@ character_t * generate_character (uint8_t body, uint16_t x, uint16_t y,
 
 }
 
-character_t * drugo (uint16_t x, uint16_t y)
+character_t * new_drugo (uint16_t x, uint16_t y)
 {
-        return generate_character('#', x, y, &drugo_move, &drugo_attack);
+        return generate_character('#', x, y, drugo_move, drugo_attack);
 }
 
-character_t * pterodactyl (uint16_t x, uint16_t y)
+character_t * new_pterodactyl (uint16_t x, uint16_t y)
 {
-        return generate_character('<', x, y, &pterodactyl_move,
-                                  &pterodactyl_attack);
+        return generate_character('<', x, y, ptero_move, ptero_attack);
 }

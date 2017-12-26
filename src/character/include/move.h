@@ -3,6 +3,6 @@
 
   int drugo_move (character_t *);
 
-  int pterodactyl_move (character_t *);
+  int ptero_move (character_t *);
 
 #endif

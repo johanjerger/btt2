@@ -12,7 +12,7 @@ int drugo_move (character_t * drugo)
 }
 
 
-int pterodactyl_move (character_t * pterodactyl)
+int ptero_move (character_t * ptero)
 {
         return 0;
 }

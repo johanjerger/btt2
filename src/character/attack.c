@@ -12,7 +12,7 @@ int drugo_attack (character_t * drugo)
 }
 
 
-int pterodactyl_attack (character_t * pterodactyl)
+int ptero_attack (character_t * ptero)
 {
         return 0;
 }

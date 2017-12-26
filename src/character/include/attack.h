@@ -3,6 +3,6 @@
 
   int drugo_attack (character_t *);
 
-  int pterodactyl_attack (character_t *);
+  int ptero_attack (character_t *);
 
 #endif
