@@ -88,3 +88,8 @@ void go_out_scores()
         btt_clear();
         scores = false;
 }
+
+void do_nothing()
+{
+        return;
+}

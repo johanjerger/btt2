@@ -7,5 +7,6 @@
   void btt_sleep(int);
   void go_out();
   void go_out_scores();
+  void do_nothing();
 
 #endif
