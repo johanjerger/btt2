@@ -24,7 +24,7 @@ option_t * new_option (char * text, void (*action_function)())
         new_option = (option_t *) malloc(sizeof(option_t));
         check_error(new_option, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_OPTION);
 
-        new_option->text = (char *) malloc(strlen(text) + 1);
+        new_option->text = (char *) malloc(strlen(text) * sizeof(char) + 1);
         strcpy(new_option->text, text);
         new_option->show = show_unselected_option;
         new_option->action = action_function;

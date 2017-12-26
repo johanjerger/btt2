@@ -44,12 +44,10 @@ int option_list_test()
                last->option->action == option3->action
                , "active");
 
-        end_test_title("option_list");
-
-        free(option1);
-        free(option2);
-        free(option3);
+        option_list_test->destroy(option_list_test);
         free(option_list_test);
+
+        end_test_title("option_list");
 
         return 0;
 }

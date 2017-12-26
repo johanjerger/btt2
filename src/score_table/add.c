@@ -8,7 +8,7 @@ void score_table_add (score_table_t * score_table, score_t * new_score)
         FILE * score_table_file = NULL;
         score_t * scores[SCORE_TABLE_SIZE + 1];
 
-        score_table->open(score_table, score_table_file);
+        score_table_file = score_table->open(score_table);
 
         for (int i = 0; i < SCORE_TABLE_SIZE; i++) {
                 scores[i] = new_score->read(score_table_file);

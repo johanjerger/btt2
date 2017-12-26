@@ -24,6 +24,9 @@ int character_test()
 
         assert(new_drugo->attack(new_drugo) == drugo_attack(new_drugo), "attack");
 
+        free(new_drugo);
+        free(new_pterodactyl);
+
         end_test_title("characters");
 
         return 0;

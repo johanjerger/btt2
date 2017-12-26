@@ -13,11 +13,11 @@
 #define MALLOC_ERROR_MSG_OPTION_LIST "error while allocting option_list_t type pointer."
 #define MALLOC_ERROR_MSG_SCORE "error while allocting score_t type pointer."
 #define MALLOC_ERROR_MSG_SCORE_PLAYER "error while allocting char * type in score.c pointer."
-#define MALLOC_ERROR_MSG_SCORE_TABLE "error while allocting score_table_t type pointer."
-#define MALLOC_ERROR_MSG_SCORE_TABLE_FILE "error while allocting char * type pointer for table file name."
-#define MALLOC_ERROR_MSG_SCORE_TABLE_TITLE "error while allocting char * type pointer for table title."
-#define CLEAR_ERROR_MSG "error calling clear function"
-#define SLEEP_ERROR_MSG "error calling sleep function"
-#define CREATE_ERROR_MSG_SCORE_TABLE "error while creating score table file"
+#define MALLOC_ERROR_MSG_SCORE_TABLE "error while allocting score_table_t type pointer in 'score_table/score_table.c'."
+#define MALLOC_ERROR_MSG_SCORE_TABLE_FILE "error while allocting char * type pointer for table file name in 'score_table/score_table.c'."
+#define MALLOC_ERROR_MSG_SCORE_TABLE_TITLE "error while allocting char * type pointer for table title in 'score_table/score_table.c'."
+#define CLEAR_ERROR_MSG "error calling clear function (defined in utility.c)"
+#define SLEEP_ERROR_MSG "error calling sleep function (defined in utility.c)"
+#define CREATE_ERROR_MSG_SCORE_TABLE "error while creating score table file in 'score_table/open.c'"
 
 #endif

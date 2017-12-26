@@ -15,7 +15,7 @@ menu_t * new_menu(char * title, option_list_t * options,
         new_menu = (menu_t *) malloc(sizeof(menu_t));
         check_error(new_menu, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_MENU);
 
-        new_menu->title = (char *) malloc(strlen(title) + 1);
+        new_menu->title = (char *) malloc(strlen(title) * sizeof(char) + 1);
         check_error(new_menu->title, NULL, MALLOC_ERROR,
                     MALLOC_ERROR_MSG_MENU_TITLE);
 

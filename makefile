@@ -8,7 +8,7 @@ DEBUG= -g
 CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 
 btt2_character = move attack
-btt2_keymap = execute
+btt2_keymap = execute append
 btt2_menu = show change_option execute destroy
 btt2_option = show select destroy
 btt2_option_list = append select destroy

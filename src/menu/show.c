@@ -28,11 +28,9 @@ int show_scores(menu_t * menu)
 {
         score_table_t * scores;
         btt_clear();
-        printf("\n\t\t\t\t  %s\n", menu->title);
+        printf("\n\t\t\t\t  %s %s\n", menu->selected_option->option->text, menu->title);
         scores = new_score_table(menu->selected_option->option->text,
                                  menu->selected_option->option->text);
-        printf("pass\n");
-        printf("pass with table in %s\n", scores->file_name);
         scores->show(scores);
 
         return 0;

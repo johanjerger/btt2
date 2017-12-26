@@ -4,5 +4,6 @@
 #include <stdbool.h>
 
   bool game;
+  bool scores;
 
 #endif

@@ -8,12 +8,13 @@
     char key;
     void (*action) ();
     struct _keymap * next_key;
-    void (*exec) (menu_t *, struct _keymap *, char);
+    void (*execute) (menu_t *, struct _keymap *, char);
+    void (*append)(struct _keymap *, char, void (*)());
   } keymap_t;
 
-  keymap_t * new_keymap(char *, void (**) (), int);
+  keymap_t * new_keymap(char, void (*)());
 
-  keymap_t * new_main_menu_keymap ();
+  keymap_t * new_main_menu_keymap();
 
   keymap_t * new_scores_keymap();
 

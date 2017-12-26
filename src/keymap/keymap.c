@@ -2,56 +2,45 @@
 #include <stdlib.h>
 #include "include/keymap.h"
 #include "include/execute.h"
+#include "include/append.h"
 #include "../menu/include/menu.h"
 #include "../menu/include/change_option.h"
 #include "../menu/include/execute.h"
+#include "../utility/include/utility.h"
+#include "../utility/include/error.h"
 
-keymap_t * new_keymap(char * keys, void (**actions)(), int size)
+
+keymap_t * new_keymap(char key, void (*action)())
 {
-        int i;
-        keymap_t * new_keymap[size];
+        keymap_t * new_keymap;
 
-        for(i = 0; i < size; i++) {
-                new_keymap[i] = (keymap_t *) malloc(sizeof(keymap_t));
-                new_keymap[i]->key = keys[i];
-                new_keymap[i]->action = actions[i];
-                new_keymap[i]->exec = execute_keymap_action;
-        }
+        new_keymap = (keymap_t *) malloc(sizeof(keymap_t));
+        check_error(new_keymap, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_KEYMAP);
 
-        for(i = 0; i < size-1; i++) {
-                new_keymap[i]->next_key = new_keymap[i+1];
-        }
+        new_keymap->key = key;
+        new_keymap->action = action;
+        new_keymap->execute = execute_keymap_action;
+        new_keymap->next_key = new_keymap;
+        new_keymap->append = keymap_append;
 
-        new_keymap[i]->next_key = new_keymap[0];
-
-        return new_keymap[0];
+        return new_keymap;
 }
-
 
 keymap_t * new_main_menu_keymap()
 {
-        int size = 3;
+        keymap_t * keymap = new_keymap('w', select_previous_option);
+        keymap->append(keymap, 's', select_next_option);
+        keymap->append(keymap, (char) 13, execute_menu);
 
-        char keys[3] = {'w', 's', (char) 13};
-        void (*actions[3])() = {
-                &select_previous_option,
-                &select_next_option,
-                &execute_menu
-        };
-
-        return new_keymap(keys, actions, size);
+        return keymap;
 }
 
 keymap_t * new_scores_keymap()
 {
-        int size = 3;
 
-        char keys[3] = {'w', 's', (char) 13};
-        void (*actions[3])() = {
-                &select_previous_option,
-                &select_next_option,
-                &execute_menu
-        };
+        keymap_t * keymap = new_keymap('a', select_previous_option);
+        keymap->append(keymap, 'd', select_next_option);
+        keymap->append(keymap, (char) 13, execute_menu);
 
-        return new_keymap(keys, actions, size);
+        return keymap;
 }

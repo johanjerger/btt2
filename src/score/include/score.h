@@ -8,7 +8,7 @@
   typedef struct _score
   {
     char * player_name;
-    uint32_t points;
+    int points;
     int level;
     int (*compare) (const void *, const void *);
     void (*show) (struct _score *);
@@ -16,6 +16,6 @@
     void (*write) (FILE *, struct _score *);
   } score_t;
 
-  score_t * new_score(char *, uint32_t, int);
+  score_t * new_score(char *, int, int);
 
 #endif

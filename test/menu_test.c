@@ -29,9 +29,10 @@ int menu_test()
         assert(main_menu->options->option->show == &show_selected_option
                , "prev opt");
 
-        end_test_title("menus");
-
+        main_menu->destroy(main_menu);
         free(main_menu);
+
+        end_test_title("menus");
 
         return 0;
 }

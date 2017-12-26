@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "include/test.h"
 #include "../src/menu/include/menu.h"
@@ -37,6 +38,8 @@ int keymap_test()
                (next_keymap->action == actions[1]) &&
                (last_keymap->action == actions[2])
                , "actions");
+
+        free(keymap_test);
 
         end_test_title("keymaps");
 

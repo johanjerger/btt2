@@ -36,12 +36,12 @@ int option_test()
         selected_option->unselect(selected_option);
         assert(selected_option->show == show_unselected_option, "unselect");
 
-        end_test_title("option");
-
         selected_option->destroy(selected_option);
         unselected_option->destroy(unselected_option);
         free(selected_option);
         free(unselected_option);
+
+        end_test_title("option");
 
         return 0;
 }

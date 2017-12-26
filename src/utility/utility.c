@@ -77,9 +77,14 @@ void btt_sleep(int time)
 }
 #endif
 
-
 void go_out()
 {
         btt_clear();
         game = false;
+}
+
+void go_out_scores()
+{
+        btt_clear();
+        scores = false;
 }
