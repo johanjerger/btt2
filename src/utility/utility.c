@@ -89,6 +89,12 @@ void go_out_scores()
         scores = false;
 }
 
+void go_out_difficult()
+{
+        btt_clear();
+        difficult = false;
+}
+
 void do_nothing()
 {
         return;

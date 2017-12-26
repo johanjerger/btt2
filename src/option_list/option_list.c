@@ -46,21 +46,42 @@ option_list_t * new_main_menu_options_list()
         return option_list;
 }
 
+option_list_t * new_difficult_options_list()
+{
+        option_t * easy_option = new_option("EASY", go_out_difficult);
+        option_t * normal_option = new_option("NORMAL", go_out_difficult);
+        option_t * hard_option = new_option("HARD", go_out_difficult);
+        option_t * very_hard_option = new_option("VERY HARD", go_out_difficult);
+        option_t * hopeless_option = new_option("HOPELESS", go_out_difficult);
+        option_t * return_option = new_option("RETURN", go_out_difficult);
+
+        easy_option->select(easy_option);
+
+        option_list_t * option_list = new_option_list(easy_option);
+        option_list->append(option_list, normal_option);
+        option_list->append(option_list, hard_option);
+        option_list->append(option_list, very_hard_option);
+        option_list->append(option_list, hopeless_option);
+        option_list->append(option_list, return_option);
+
+        return option_list;
+}
+
 option_list_t * new_scores_options_list()
 {
-        option_t * easy_scores_option = new_option("EASY", go_out_scores);
-        option_t * normal_scores_option = new_option("NORMAL", go_out_scores);
-        option_t * hard_scores_option = new_option("HARD", go_out_scores);
-        option_t * very_hard_scores_option = new_option("VERY HARD", go_out_scores);
-        option_t * hopeless_scores_option = new_option("HOPELESS", go_out_scores);
+        option_t * easy_option = new_option("EASY", go_out_scores);
+        option_t * normal_option = new_option("NORMAL", go_out_scores);
+        option_t * hard_option = new_option("HARD", go_out_scores);
+        option_t * very_hard_option = new_option("VERY HARD", go_out_scores);
+        option_t * hopeless_option = new_option("HOPELESS", go_out_scores);
 
-        easy_scores_option->select(easy_scores_option);
+        easy_option->select(easy_option);
 
-        option_list_t * option_list = new_option_list(easy_scores_option);
-        option_list->append(option_list, normal_scores_option);
-        option_list->append(option_list, hard_scores_option);
-        option_list->append(option_list, very_hard_scores_option);
-        option_list->append(option_list, hopeless_scores_option);
+        option_list_t * option_list = new_option_list(easy_option);
+        option_list->append(option_list, normal_option);
+        option_list->append(option_list, hard_option);
+        option_list->append(option_list, very_hard_option);
+        option_list->append(option_list, hopeless_option);
 
         return option_list;
 }

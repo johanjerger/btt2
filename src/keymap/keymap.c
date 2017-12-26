@@ -36,6 +36,17 @@ keymap_t * new_main_menu_keymap()
         return keymap;
 }
 
+keymap_t * new_difficult_menu_keymap()
+{
+
+        keymap_t * keymap = new_keymap('w', select_previous_option);
+        keymap->append(keymap, 's', select_next_option);
+        keymap->append(keymap, (char) 13, execute_menu);
+        keymap->append(keymap, (char) 777, do_nothing);
+
+        return keymap;
+}
+
 keymap_t * new_scores_keymap()
 {
 

@@ -24,6 +24,24 @@ int show_main_menu(menu_t * menu)
         return 0;
 }
 
+int show_difficult(menu_t * menu)
+{
+        option_list_t * head = menu->options;
+
+        btt_clear();
+        printf(MAIN_ART);
+        printf("\n\t\t\t\t  %s\n", menu->title);
+
+        while(head->next != head) {
+                (head->option)->show(head->option);
+                head = head->next;
+        }
+
+        (head->option)->show(head->option);
+
+        return 0;
+}
+
 int show_scores(menu_t * menu)
 {
         score_table_t * scores;

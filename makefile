@@ -30,8 +30,9 @@ test: clean folders test.o $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
 
 main.o: btt.o
 		#MAIN
-		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/difficult_menu.c -o $(TEMPORAL_FOLDER)/difficult_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
 
 btt.o:
 		#CHARACTERS

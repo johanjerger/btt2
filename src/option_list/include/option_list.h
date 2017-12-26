@@ -18,6 +18,8 @@ option_list_t * new_option_list(option_t *);
 
 option_list_t * new_main_menu_options_list();
 
+option_list_t * new_difficult_options_list();
+
 option_list_t * new_scores_options_list();
 
 #endif

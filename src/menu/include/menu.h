@@ -24,6 +24,8 @@ menu_t * new_menu(char *, option_list_t *, int(*show_menu)(menu_t *));
 
 menu_t * new_main_menu();
 
+menu_t * new_difficult_menu();
+
 menu_t * new_scores_menu();
 
 #endif

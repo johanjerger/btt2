@@ -5,5 +5,6 @@
 
   bool game;
   bool scores;
+  bool difficult;
 
 #endif
