@@ -17,6 +17,6 @@
     FILE * (*open) (struct _score_table *);
   } score_table_t;
 
-  score_table_t * new_score_table(char *, char *);
+  score_table_t * new_score_table(char *);
 
 #endif

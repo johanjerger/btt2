@@ -8,7 +8,7 @@
 #include "include/show.h"
 #include "include/open.h"
 
-score_table_t * new_score_table(char * file_name, char * title)
+score_table_t * new_score_table(char * title)
 {
         score_table_t * new_score_table;
         char * path = SCORE_TABLE_PATH;
@@ -16,12 +16,12 @@ score_table_t * new_score_table(char * file_name, char * title)
         new_score_table = (score_table_t *) malloc(sizeof(score_table_t));
         check_error(new_score_table, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE_TABLE);
 
-        new_score_table->file_name = (char *) malloc((strlen(file_name) + strlen(path)) * sizeof(char) + 1);
+        new_score_table->file_name = (char *) malloc((strlen(title) + strlen(path)) * sizeof(char) + 1);
         check_error(new_score_table->file_name, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE_TABLE_FILE);
         strcpy(new_score_table->file_name, path);
-        strcat(new_score_table->file_name, file_name);
+        strcat(new_score_table->file_name, title);
 
-        new_score_table->title = (char *) malloc(strlen(file_name) * sizeof(char) + 1);
+        new_score_table->title = (char *) malloc(strlen(title) * sizeof(char) + 1);
         check_error(new_score_table->title, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE_TABLE_TITLE);
         strcpy(new_score_table->title, title);
 
