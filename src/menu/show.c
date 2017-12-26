@@ -27,10 +27,10 @@ int show_main_menu(menu_t * menu)
 int show_scores(menu_t * menu)
 {
         score_table_t * scores;
+
         btt_clear();
         printf("\n\t\t\t\t  %s %s\n", menu->selected_option->option->text, menu->title);
-        scores = new_score_table(menu->selected_option->option->text,
-                                 menu->selected_option->option->text);
+        scores = new_score_table(menu->selected_option->option->text);
         scores->show(scores);
 
         return 0;
