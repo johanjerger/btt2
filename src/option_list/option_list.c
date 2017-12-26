@@ -32,14 +32,14 @@ option_list_t * new_option_list(option_t * opt)
 option_list_t * new_main_menu_options_list()
 {
         option_t * start_option = new_option("START", go_out);
-        option_t * scores_option = new_option("SCORES", scores_menu);
+        //option_t * scores_option = new_option("SCORES", scores_menu);
         option_t * configuration_option = new_option("CONFIG", go_out);
         option_t * exit_option = new_option("EXIT", go_out);
 
         start_option->select(start_option);
 
         option_list_t * option_list = new_option_list(start_option);
-        option_list->append(option_list, scores_option);
+        //option_list->append(option_list, scores_option);
         option_list->append(option_list, configuration_option);
         option_list->append(option_list, exit_option);
 

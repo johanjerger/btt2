@@ -19,15 +19,15 @@ int main()
 {
         make_header();
 
-        character_test();
+        //character_test();
 
         option_test();
 
-        option_list_test();
+        //option_list_test();
 
-        keymap_test();
+        //keymap_test();
 
-        menu_test();
+        //menu_test();
 
         make_footer();
 

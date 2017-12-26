@@ -3,8 +3,8 @@
 #include <stdint.h>
 #include "include/test.h"
 #include "../src/character/include/character.h"
-#include "../src/character/include/character_attack.h"
-#include "../src/character/include/character_move.h"
+#include "../src/character/include/attack.h"
+#include "../src/character/include/move.h"
 
 int character_test()
 {

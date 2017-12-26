@@ -3,9 +3,9 @@
 #include <string.h>
 #include "include/test.h"
 #include "../src/menu/include/menu.h"
-#include "../src/menu/include/menu_show.h"
+#include "../src/menu/include/show.h"
 #include "../src/option/include/option.h"
-#include "../src/option/include/option_show.h"
+#include "../src/option/include/show.h"
 
 int menu_test()
 {
