@@ -1,15 +1,17 @@
 #ifndef BTT_ART_H
 #define BTT_ART_H
 
-#define MAIN_ART "\
-\t   ############        ###############        ############### * \n\
-\t * # ######## #        #             #        #             #   \n\
+#include "../src/utility/include/color.h"
+
+#define MAIN_ART \
+RED "\t   ############  " YELLOW "*" RED "     ###############        ############### " YELLOW "*" RED " \n\
+\t " YELLOW "*" RED " # ######## #        #             #        #             #   \n\
 \t   # #      # #        ######   ######        ######   ######   \n\
-\t   # ######## #             #   #        *         #   #        \n\
+\t   # ######## #             #   #        " YELLOW "*" RED "         #   #        \n\
 \t   #          ####          #   #                  #   #        \n\
-\t   # ########### #   *      #   #                  #   #        \n\
+\t   # ########### #   " YELLOW "*" RED "      #   #              " YELLOW "*" RED "   #   #        \n\
 \t   # #         # #          #   #                  #   #        \n\
-\t   # ########### #          #   #                  #   #        \n\
-\t   ###############          #####                  ##### *      \n"
+\t   # ########### #          #   #    " YELLOW "*" RED "             #   #        \n\
+\t   ###############          #####                  ##### " YELLOW "*" RED "      \n" RESET
 
 #endif
