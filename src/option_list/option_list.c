@@ -8,7 +8,7 @@
 #include "../utility/include/error.h"
 
 // This includes are to create the menus
-#include "../include/scores_menu.h"
+#include "../include/menus.h"
 
 option_list_t * new_option_list(option_t * opt)
 {
@@ -31,7 +31,7 @@ option_list_t * new_option_list(option_t * opt)
 
 option_list_t * new_main_menu_options_list()
 {
-        option_t * start_option = new_option("START", go_out);
+        option_t * start_option = new_option("START", difficult_menu);
         option_t * scores_option = new_option("SCORES", scores_menu);
         option_t * configuration_option = new_option("CONFIG", go_out);
         option_t * exit_option = new_option("EXIT", go_out);

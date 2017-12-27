@@ -5,7 +5,6 @@
 #include "menu/include/menu.h"
 #include "keymap/include/keymap.h"
 #include "utility/include/input.h"
-#include "include/scores_menu.h"
 
 int main()
 {
