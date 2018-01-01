@@ -3,6 +3,7 @@
 
   void check_error(void *, void *, int, char *);
   void check_int_error(int, int, int, char *);
+  void create_directory(char *);
   void btt_clear();
   void btt_sleep(int);
   void go_out();

@@ -14,6 +14,7 @@ btt2_option = show select destroy
 btt2_option_list = append select destroy
 btt2_score = show io compare
 btt2_score_table = add show open
+btt2_configuration = configuration keys path
 btt2_utility = utility input
 
 btt2_test = main_test test character_test option_test \
@@ -29,54 +30,58 @@ test: clean folders test.o $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
 	    gcc $(TEMPORAL_FOLDER)/** -o $(BUILD_FOLDER)/btt2test $(CFLAG)
 
 main.o: btt.o
-		#MAIN
+		# MAIN
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/difficult_menu.c -o $(TEMPORAL_FOLDER)/difficult_menu.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
 
 btt.o:
-		#CHARACTERS
+		# CHARACTERS
 		gcc -c $(SOURCE_FOLDER)/character/character.c -o $(TEMPORAL_FOLDER)/character.o $(CFLAG)
 		for file in $(btt2_character); do \
 		gcc -c $(SOURCE_FOLDER)/character/$$file.c -o $(TEMPORAL_FOLDER)/character_$$file.o $(CFLAG); \
 done
-		#OPTIONS
+		# OPTIONS
 		gcc -c $(SOURCE_FOLDER)/option/option.c -o $(TEMPORAL_FOLDER)/option.o $(CFLAG)
 		for file in $(btt2_option); do \
 		gcc -c $(SOURCE_FOLDER)/option/$$file.c -o $(TEMPORAL_FOLDER)/option_$$file.o $(CFLAG); \
 done
-		#OPTIONS LIST
+		# OPTIONS LIST
 		gcc -c $(SOURCE_FOLDER)/option_list/option_list.c -o $(TEMPORAL_FOLDER)/option_list.o $(CFLAG)
 		for file in $(btt2_option_list); do \
 		gcc -c $(SOURCE_FOLDER)/option_list/$$file.c -o $(TEMPORAL_FOLDER)/option_list_$$file.o $(CFLAG); \
 done
-		#MENUS
+		# MENUS
 		gcc -c $(SOURCE_FOLDER)/menu/menu.c -o $(TEMPORAL_FOLDER)/menu.o $(CFLAG)
 		for file in $(btt2_menu); do \
 		gcc -c $(SOURCE_FOLDER)/menu/$$file.c -o $(TEMPORAL_FOLDER)/menu_$$file.o $(CFLAG); \
 done
-		#KEYMAPS
+		# KEYMAPS
 		gcc -c $(SOURCE_FOLDER)/keymap/keymap.c -o $(TEMPORAL_FOLDER)/keymap.o $(CFLAG)
 		for file in $(btt2_keymap); do \
 		gcc -c $(SOURCE_FOLDER)/keymap/$$file.c -o $(TEMPORAL_FOLDER)/keymap_$$file.o $(CFLAG); \
 done
-		#SCORE
+		# SCORE
 		gcc -c $(SOURCE_FOLDER)/score/score.c -o $(TEMPORAL_FOLDER)/score.o $(CFLAG)
 		for file in $(btt2_score); do \
 		gcc -c $(SOURCE_FOLDER)/score/$$file.c -o $(TEMPORAL_FOLDER)/score_$$file.o $(CFLAG); \
 done
-		#SCORE TABLE
+		# SCORE TABLE
 		gcc -c $(SOURCE_FOLDER)/score_table/score_table.c -o $(TEMPORAL_FOLDER)/score_table.o $(CFLAG)
 		for file in $(btt2_score_table); do \
 		gcc -c $(SOURCE_FOLDER)/score_table/$$file.c -o $(TEMPORAL_FOLDER)/score_table_$$file.o $(CFLAG); \
 done
-		#UTILITIES
+		# UTILITIES
 		for file in $(btt2_utility); do \
 		gcc -c $(SOURCE_FOLDER)/utility/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
+		# CONFIGURATION
+		for file in $(btt2_configuration); do \
+		gcc -c $(SOURCE_FOLDER)/configuration/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+done
 
 test.o: btt.o
-		#TEST CLASES
+		# TEST CLASES
 		for file in $(btt2_test); do \
 		gcc -c $(TEST_FOLDER)/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done

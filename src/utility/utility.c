@@ -4,7 +4,9 @@
         #include <windows.h>
 #elif __unix__
         #include <time.h>
+        #include <sys/stat.h>
 #endif
+#include <errno.h>
 #include "../include/btt2.h"
 #include "include/error.h"
 #include "include/utility.h"
@@ -29,6 +31,27 @@ void check_int_error(int value, int error, int error_code, char * error_msg)
                 exit(error_code);
         }
 }
+
+#ifdef _WIN32
+
+void create_directory(char * path)
+{
+        check_int_error(CreateDirectory(path, NULL), 0,
+                        ERROR_CREATING_DIRECTORY, ERROR_CREATING_DIRECTORY_MSG);
+}
+
+#elif __unix__
+
+// !!!!! THIS FUNCTION NEEDS TO BE REFACTORED !!!!!
+
+void create_directory(char * path)
+{
+        if(mkdir(path, 0777) != EEXIST)
+                if(mkdir(path, 0777) != EEXIST)
+                        fprintf(stderr, "%s\n", "error");
+}
+
+#endif
 
 
 /*

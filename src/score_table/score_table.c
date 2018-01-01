@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
+#include "../include/btt2.h"
 #include "include/score_table.h"
 #include "include/add.h"
 #include "include/show.h"
@@ -11,7 +12,7 @@
 score_table_t * new_score_table(char * title)
 {
         score_table_t * new_score_table;
-        char * path = SCORE_TABLE_PATH;
+        char * path = root_path;
 
         new_score_table = (score_table_t *) malloc(sizeof(score_table_t));
         check_error(new_score_table, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORE_TABLE);

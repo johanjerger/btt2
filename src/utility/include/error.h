@@ -5,6 +5,7 @@
 #define CLEAR_ERROR 45731
 #define SLEEP_ERROR 23967
 #define CREATE_ERROR 63375
+#define ERROR_CREATING_DIRECTORY 111 // Modify later
 #define MALLOC_ERROR_MSG_CHARACTER "error while allocting character_t type pointer."
 #define MALLOC_ERROR_MSG_KEYMAP "error while allocting keymap_t type pointer."
 #define MALLOC_ERROR_MSG_MENU "error while allocting menu_t type pointer."
@@ -18,6 +19,7 @@
 #define MALLOC_ERROR_MSG_SCORE_TABLE_TITLE "error while allocting char * type pointer for table title in 'score_table/score_table.c'."
 #define CLEAR_ERROR_MSG "error calling clear function (defined in utility.c)"
 #define SLEEP_ERROR_MSG "error calling sleep function (defined in utility.c)"
+#define ERROR_CREATING_DIRECTORY_MSG "Unable to create configuration path in 'configuration/configuration.c'"
 #define CREATE_ERROR_MSG_SCORE_TABLE "error while creating score table file in 'score_table/open.c'"
 
 #endif
