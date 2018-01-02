@@ -6,9 +6,9 @@
   typedef struct _keymap
   {
     char key;
-    void (*action) ();
     struct _keymap * next_key;
-    void (*execute) (menu_t *, struct _keymap *, char);
+    void (*action)();
+    void (*execute)(menu_t *, struct _keymap *, char);
     void (*append)(struct _keymap *, char, void (*)());
   } keymap_t;
 

@@ -8,7 +8,7 @@
 #include "../utility/include/error.h"
 
 menu_t * new_menu(char * title, option_list_t * options,
-                  int (*show_menu)(menu_t *))
+                  void (*show_menu)(menu_t *))
 {
         menu_t * new_menu;
 
