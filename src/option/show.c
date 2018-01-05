@@ -3,8 +3,8 @@
 #include "include/option.h"
 
 /*
- *  This modules defines the game's options
- *  shows.
+ *  The show function is a special one in the option_t type, it defines how
+ *  the (option_t)->text is show in the terminal screen.
  */
 
 void show_unselected_option(option_t * opt)

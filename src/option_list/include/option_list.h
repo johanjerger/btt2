@@ -1,7 +1,7 @@
 #ifndef BTT2_OLT_H
 #define BTT2_OLT_H
 
-  #include "../../option/include/option.h"
+#include "../../option/include/option.h"
 
 typedef struct _option_list
 {
