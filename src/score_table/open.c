@@ -11,7 +11,7 @@ score_table_open (score_table_t * score_table)
 		FILE * score_table_file;
 		score_table_file = fopen(score_table->file_name, "r");
 
-		if(score_table_file == NULL)
+		if (score_table_file == NULL)
 		{
 				score_table_file = fopen(score_table->file_name, "w");
 				check_error(score_table_file, NULL, CREATE_ERROR,
