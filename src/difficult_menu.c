@@ -12,8 +12,8 @@ difficult_menu()
 		menu_t * difficult_menu = new_difficult_menu();
 		keymap_t * difficult_keymap = new_difficult_menu_keymap();
 
-		difficult = true;
-		while (difficult)
+		difficult_loop = true;
+		while (difficult_loop)
 		{
 				difficult_menu->show(difficult_menu);
 				char key = btt_getch();

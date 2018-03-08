@@ -12,8 +12,8 @@ scores_menu (void)
 		menu_t * scores_menu = new_scores_menu();
 		keymap_t * scores_keymap = new_scores_keymap();
 
-		scores = true;
-		while (scores)
+		scores_loop = true;
+		while (scores_loop)
 		{
 				scores_menu->show(scores_menu);
 				char key = btt_getch();

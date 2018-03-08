@@ -17,9 +17,10 @@ char * scores_path;
 char * config_path;
 
 // global status variables
-bool game;
-bool scores;
-bool difficult;
+bool main_loop;
+bool game_loop;
+bool scores_loop;
+bool difficult_loop;
 
 // global keys configurations
 char action_key;
