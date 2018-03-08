@@ -9,6 +9,7 @@ score_table_show (score_table_t * score_table)
 		FILE * score_table_file = NULL;
 		score_t * aux_score = new_score("aux", 0, 1);
 		score_table_file = score_table->open(score_table);
+		printf("\tName\t\t\tScore\t\tLevel\n");
 		for (int i = 0; i != score_table->size; i++)
 		{
 				score_t * score = aux_score->read(score_table_file);
