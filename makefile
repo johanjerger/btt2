@@ -10,6 +10,7 @@ CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 btt2_character = move attack
 btt2_keymap = execute append
 btt2_menu = show change_option execute destroy
+btt2_difficult = difficult_setters
 btt2_option = show select destroy
 btt2_option_list = append select destroy
 btt2_score = show io compare
@@ -34,6 +35,7 @@ main.o: btt.o
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/difficult_menu.c -o $(TEMPORAL_FOLDER)/difficult_menu.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/game.c -o $(TEMPORAL_FOLDER)/game.o $(CFLAG)
 
 btt.o:
 		# CHARACTERS
@@ -78,6 +80,10 @@ done
 		# CONFIGURATION
 		for file in $(btt2_configuration); do \
 		gcc -c $(SOURCE_FOLDER)/configuration/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
+done
+		# DIFFICULT
+		for file in $(btt2_difficult); do \
+		gcc -c $(SOURCE_FOLDER)/difficult/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
 
 test.o: btt.o
