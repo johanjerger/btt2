@@ -14,7 +14,7 @@ btt2_option = show select destroy
 btt2_option_list = append select destroy
 btt2_score = show io compare
 btt2_score_table = add show open
-btt2_configuration = configuration keys path
+btt2_configuration = configuration keys path get_home
 btt2_utility = utility input
 
 btt2_test = main_test test character_test option_test \
