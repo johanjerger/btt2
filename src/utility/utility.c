@@ -12,7 +12,6 @@
 #include "include/utility.h"
 #include "include/color.h"
 
-
 void
 check_error (void * value, void * error, int error_code, char * error_msg)
 {
@@ -60,6 +59,7 @@ create_directory (char * path)
 // This is a generic clear that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
+
 void
 btt_clear (void)
 {
@@ -81,6 +81,7 @@ btt_clear (void)
 // This is a generic sleep that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
+
 void
 btt_sleep (int time)
 {
@@ -98,6 +99,7 @@ btt_sleep (int time)
 
 		check_int_error(nanosleep(&ts, NULL), -1, SLEEP_ERROR, SLEEP_ERROR_MSG);
 }
+
 #endif
 
 void
