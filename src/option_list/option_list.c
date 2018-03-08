@@ -7,6 +7,7 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 #include "../include/menus.h"
+#include "../difficult/include/difficult_setters.h"
 
 option_list_t *
 new_option_list (option_t * opt)
@@ -47,11 +48,11 @@ new_main_menu_options_list (void)
 option_list_t *
 new_difficult_options_list (void)
 {
-		option_t * easy_option = new_option("EASY", go_out_difficult);
-		option_t * normal_option = new_option("NORMAL", go_out_difficult);
-		option_t * hard_option = new_option("HARD", go_out_difficult);
-		option_t * very_hard_option = new_option("VERY HARD", go_out_difficult);
-		option_t * hopeless_option = new_option("HOPELESS", go_out_difficult);
+		option_t * easy_option = new_option("EASY", set_easy_difficult);
+		option_t * normal_option = new_option("NORMAL", set_normal_difficult);
+		option_t * hard_option = new_option("HARD", set_hard_difficult);
+		option_t * very_hard_option = new_option("VERY HARD", set_very_hard_difficult);
+		option_t * hopeless_option = new_option("HOPELESS", set_hopeless_difficult);
 		option_t * return_option = new_option("RETURN", go_out_difficult);
 		easy_option->select(easy_option);
 		option_list_t * option_list = new_option_list(easy_option);
