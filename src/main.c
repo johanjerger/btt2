@@ -9,18 +9,16 @@
 
 int main()
 {
-        menu_t * main_menu = new_main_menu();
-        keymap_t * main_menu_keymap = new_main_menu_keymap();
+		make_configuration();
+		menu_t * main_menu = new_main_menu();
+		keymap_t * main_menu_keymap = new_main_menu_keymap();
 
-        make_configuration();
+		game = true;
+		while (game)
+		{
+				main_menu->show(main_menu);
+				main_menu_keymap->execute(main_menu, main_menu_keymap, btt_getch());
+		}
 
-        game = true;
-        while(game) {
-                main_menu->show(main_menu);
-                char key;
-                key = btt_getch();
-                main_menu_keymap->execute(main_menu, main_menu_keymap, key);
-        }
-
-        return 0;
+		return 0;
 }
