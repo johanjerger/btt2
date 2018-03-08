@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 #ifdef _WIN32
-		#include <conio.h>
+#include <conio.h>
 #elif __unix__
-		#include <termios.h>
-		#include <unistd.h>
-		#include <errno.h>
-		#include <fcntl.h>
+#include <termios.h>
+#include <unistd.h>
+#include <errno.h>
+#include <fcntl.h>
 #endif
 #include "include/error.h"
 #include "include/utility.h"
@@ -57,8 +57,6 @@ char btt_kbhit()
 char btt_kbhit()
 {
 		struct termios oldt, newt;
-		char out;
-		char * ch = (char *) malloc(KBHIT_BUFFER);
 		short oldf;
 
 		tcgetattr(STDIN_FILENO, &oldt);
@@ -68,6 +66,7 @@ char btt_kbhit()
 		oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
 		fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
 
+		char * ch = (char *) malloc(KBHIT_BUFFER * sizeof(char));
 		if(!(fscanf(stdin,"%s", ch))) {
 				fprintf(stderr, "error -> %d\n", EIO);
 				exit(1);
@@ -76,7 +75,7 @@ char btt_kbhit()
 		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 		fcntl(STDIN_FILENO, F_SETFL, oldf);
 
-		out = ch[0];
+		char out = ch[0];
 
 		free(ch);
 
