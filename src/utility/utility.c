@@ -13,7 +13,8 @@
 #include "include/color.h"
 
 
-void check_error(void * value, void * error, int error_code, char * error_msg)
+void
+check_error (void * value, void * error, int error_code, char * error_msg)
 {
 		if(value == error)
 		{
@@ -23,8 +24,8 @@ void check_error(void * value, void * error, int error_code, char * error_msg)
 		}
 }
 
-
-void check_int_error(int value, int error, int error_code, char * error_msg)
+void
+check_int_error (int value, int error, int error_code, char * error_msg)
 {
 		if(value == error)
 		{
@@ -36,7 +37,8 @@ void check_int_error(int value, int error, int error_code, char * error_msg)
 
 #ifdef _WIN32
 
-void create_directory(char * path)
+void
+create_directory (char * path)
 {
 		check_int_error(CreateDirectory(path, NULL), 0,
 		                ERROR_CREATING_DIRECTORY, ERROR_CREATING_DIRECTORY_MSG);
@@ -45,8 +47,8 @@ void create_directory(char * path)
 #elif __unix__
 
 // !!!!! THIS FUNCTION NEEDS TO BE REFACTORED !!!!!
-
-void create_directory(char * path)
+void
+create_directory (char * path)
 {
 		if(mkdir(path, 0777) != EEXIST)
 				if(mkdir(path, 0777) != EEXIST)
@@ -55,14 +57,11 @@ void create_directory(char * path)
 
 #endif
 
-
-/*
- * This is a generic clear that generate and abstraction
- * no mether if you are in Windows or Unix Systems.
- */
-
+// This is a generic clear that generate and abstraction
+// no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
-void btt_clear()
+void
+btt_clear (void)
 {
 		btt_sleep(25);
 		check_int_error(system("cls"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
@@ -70,7 +69,8 @@ void btt_clear()
 
 #elif __unix__
 
-void btt_clear()
+void
+btt_clear (void)
 {
 		btt_sleep(25);
 		check_int_error(system("clear"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
@@ -78,21 +78,19 @@ void btt_clear()
 
 #endif
 
-
-/*
- * This is a generic sleep that generate and abstraction
- * no mether if you are in Windows or Unix Systems.
- */
-
+// This is a generic sleep that generate and abstraction
+// no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
-void btt_sleep(int time)
+void
+btt_sleep (int time)
 {
 		Sleep(time);
 }
 
 #elif __unix__
 
-void btt_sleep(int time)
+void
+btt_sleep (int time)
 {
 		struct timespec ts;
 		ts.tv_sec = time / 1000;
@@ -102,25 +100,29 @@ void btt_sleep(int time)
 }
 #endif
 
-void go_out()
+void
+go_out (void)
 {
 		btt_clear();
 		game = false;
 }
 
-void go_out_scores()
+void
+go_out_scores (void)
 {
 		btt_clear();
 		scores = false;
 }
 
-void go_out_difficult()
+void
+go_out_difficult (void)
 {
 		btt_clear();
 		difficult = false;
 }
 
-void do_nothing()
+void
+do_nothing (void)
 {
 		return;
 }

@@ -13,43 +13,49 @@
 #include "include/utility.h"
 #include "include/input.h"
 
-
 // This is a generic getch that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
-char btt_getch(void)
+
+char
+btt_getch (void)
 {
-		return _getch();
+		return tolower(_getch());
 }
 
 #elif __unix__
 
-char btt_getch(void)
+char
+btt_getch (void)
 {
 		struct termios oldattr, newattr;
 		short ch;
+
 		tcgetattr(1, &oldattr);
 		newattr = oldattr;
 		newattr.c_lflag &= ~(ICANON | ECHO);
 		tcsetattr(1, TCSANOW, &newattr);
 		ch = getchar();
 		tcsetattr(1, TCSANOW, &oldattr);
+
 		return tolower(ch);
 }
-#endif
 
+#endif
 
 // This is a generic kbhit that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
-char btt_kbhit()
+char
+btt_kbhit (void)
 {
-		return _kbhit();
+		return tolower(_kbhit());
 }
 
 #elif __unix__
 
-char btt_kbhit()
+char
+btt_kbhit (void)
 {
 		struct termios oldt, newt;
 		short oldf;
@@ -73,4 +79,5 @@ char btt_kbhit()
 
 		return tolower(out);
 }
+
 #endif
