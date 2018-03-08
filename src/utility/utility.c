@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include <string.h>
 #ifdef _WIN32
 #include <windows.h>
 #elif __unix__
@@ -49,9 +51,9 @@ create_directory (char * path)
 void
 create_directory (char * path)
 {
-		if(mkdir(path, 0777) != EEXIST)
-				if(mkdir(path, 0777) != EEXIST)
-						fprintf(stderr, "%s\n", "error");
+		if(mkdir(path, 440) == -1)
+				if(errno != EEXIST)
+						fprintf(stderr, "%s %s\n", "error in mkdir for path: ", path);
 }
 
 #endif
@@ -101,6 +103,19 @@ btt_sleep (int time)
 }
 
 #endif
+
+void
+center_output (char * to_print, char * word)
+{
+		int to_print_hlen = strlen(to_print) / 2;
+		int len = strlen(word);
+		int hlen = floor(len/2);
+		for(int i = to_print_hlen - hlen; i < to_print_hlen + hlen; i++)
+		{
+				to_print[i] = word[i + hlen - to_print_hlen];
+		}
+		if ((len % 2) != 0) to_print[to_print_hlen + hlen] = word[len - 1];
+}
 
 void
 go_out (void)
