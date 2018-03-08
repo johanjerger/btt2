@@ -36,7 +36,7 @@ path_configuration (void)
 		check_error(config_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_CONFIG_PATH);
 
 		strcpy(config_path, root_path);
-		strcat(config_path, "scores");
+		strcat(config_path, "config");
 		strcat(config_path, BAR);
 		create_directory(config_path);
 }
