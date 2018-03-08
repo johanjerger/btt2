@@ -104,21 +104,21 @@ void
 go_out (void)
 {
 		btt_clear();
-		game = false;
+		main_loop = false;
 }
 
 void
 go_out_scores (void)
 {
 		btt_clear();
-		scores = false;
+		scores_loop = false;
 }
 
 void
 go_out_difficult (void)
 {
 		btt_clear();
-		difficult = false;
+		difficult_loop = false;
 }
 
 void
