@@ -13,11 +13,9 @@
 #include "include/utility.h"
 #include "include/input.h"
 
-/*
- * This is a generic getch that generate and abstraction
- * no mether if you are in Windows or Unix Systems.
- */
 
+// This is a generic getch that generate and abstraction
+// no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
 char btt_getch(void)
 {
@@ -41,11 +39,8 @@ char btt_getch(void)
 #endif
 
 
-/*
- * This is a generic kbhit that generate and abstraction
- * no mether if you are in Windows or Unix Systems.
- */
-
+// This is a generic kbhit that generate and abstraction
+// no mether if you are in Windows or Unix Systems.
 #ifdef _WIN32
 char btt_kbhit()
 {
@@ -66,18 +61,15 @@ char btt_kbhit()
 		oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
 		fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
 
-		char * ch = (char *) malloc(KBHIT_BUFFER * sizeof(char));
-		if(!(fscanf(stdin,"%s", ch))) {
-				fprintf(stderr, "error -> %d\n", EIO);
-				exit(1);
-		}
+		char * input_buffer = (char *) malloc(KBHIT_BUFFER * sizeof(char));
+		check_error(input_buffer, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_KBHIT_BUFF);
+		check_int_error(fscanf(stdin,"%s", input_buffer), 0, EIO, SCANF_ERROR_MSG);
 
 		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 		fcntl(STDIN_FILENO, F_SETFL, oldf);
 
-		char out = ch[0];
-
-		free(ch);
+		char out = input_buffer[0];
+		free(input_buffer);
 
 		return tolower(out);
 }
