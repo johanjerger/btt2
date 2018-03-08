@@ -14,10 +14,10 @@ typedef struct _keymap
 
 keymap_t * new_keymap(char, void (*)());
 
-keymap_t * new_main_menu_keymap();
+keymap_t * new_main_menu_keymap (void);
 
-keymap_t * new_difficult_menu_keymap();
+keymap_t * new_difficult_menu_keymap (void);
 
-keymap_t * new_scores_keymap();
+keymap_t * new_scores_keymap (void);
 
 #endif
