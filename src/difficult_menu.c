@@ -6,18 +6,17 @@
 #include "keymap/include/keymap.h"
 #include "utility/include/input.h"
 
-int difficult_menu()
+void
+difficult_menu()
 {
-        menu_t * difficult_menu = new_difficult_menu();
-        keymap_t * difficult_menu_keymap = new_difficult_menu_keymap();
+		menu_t * difficult_menu = new_difficult_menu();
+		keymap_t * difficult_keymap = new_difficult_menu_keymap();
 
-        difficult = true;
-        while(difficult) {
-                difficult_menu->show(difficult_menu);
-                char key;
-                key = btt_getch();
-                difficult_menu_keymap->execute(difficult_menu, difficult_menu_keymap, key);
-        }
-
-        return 0;
+		difficult = true;
+		while (difficult)
+		{
+				difficult_menu->show(difficult_menu);
+				char key = btt_getch();
+				difficult_keymap->execute(difficult_menu, difficult_keymap, key);
+		}
 }

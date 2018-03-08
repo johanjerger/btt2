@@ -7,7 +7,8 @@
 #include "keymap/include/keymap.h"
 #include "utility/include/input.h"
 
-int main()
+int
+main (void)
 {
 		make_configuration();
 		menu_t * main_menu = new_main_menu();
@@ -17,7 +18,8 @@ int main()
 		while (game)
 		{
 				main_menu->show(main_menu);
-				main_menu_keymap->execute(main_menu, main_menu_keymap, btt_getch());
+				char key = btt_getch();
+				main_menu_keymap->execute(main_menu, main_menu_keymap, key);
 		}
 
 		return 0;
