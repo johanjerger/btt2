@@ -1,66 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "include/get_home.h"
 #include "../include/btt2.h"
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 
-#ifdef _WIN32
-
-void path_configuration()
+void
+path_configuration (void)
 {
-        char * root = getenv("HOMEDRIVE");
-        char * home_folder = getenv("HOMEPATH");
+		get_home();
 
-        int size_of_home = strlen(root) + strlen(home_folder);
+		// Defining the root folder for the btt files
+		int size_of_home = strlen(home_path);
+		root_path = (char *) malloc(size_of_home * sizeof(char) + 20);
+		check_error(root_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_ROOT_PATH);
 
-        /*
-         * I alloc a little bit more than necessary because of the sub-
-         * folders length.
-         */
+		strcpy(root_path, home_path);
+		strcat(root_path, ".btt2");
+		strcat(root_path, BAR);
+		create_directory(root_path);
 
-        root_path = (char *) malloc(size_of_home * sizeof(char) + 40);
+		// Defining the scores table folder for the scores data
+		int size_of_root = strlen(root_path);
+		scores_path = (char *) malloc(size_of_root * sizeof(char) + 20);
+		check_error(scores_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_SCORES_PATH);
 
-        strcpy(root_path, root);
-        strcat(root_path, home_folder);
-        strcat(root_path, BAR);
-        strcat(root_path, ".btt2");
-        strcat(root_path, BAR);
+		strcpy(scores_path, root_path);
+		strcat(scores_path, "scores");
+		strcat(scores_path, BAR);
+		create_directory(scores_path);
 
-        create_directory(root_path);
+		// Defining the configuration folder for the cfg files
+		config_path = (char *) malloc(size_of_root * sizeof(char) + 20);
+		check_error(config_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_CONFIG_PATH);
 
-        strcat(root_path, "scores");
-        strcat(root_path, BAR);
-
-        create_directory(root_path);
+		strcpy(config_path, root_path);
+		strcat(config_path, "scores");
+		strcat(config_path, BAR);
+		create_directory(config_path);
 }
-
-#elif __unix__
-
-void path_configuration()
-{
-        char * home_folder = getenv("HOME");
-
-        int size_of_home = strlen(home_folder);
-
-        /*
-         * I alloc a little bit more than necessary because of the sub-
-         * folders length.
-         */
-
-        root_path = (char *) malloc(size_of_home * sizeof(char) + 20);
-
-        strcpy(root_path, home_folder);
-        strcat(root_path, BAR);
-        strcat(root_path, ".btt2");
-        strcat(root_path, BAR);
-
-        create_directory(root_path);
-
-        strcat(root_path, "scores");
-        strcat(root_path, BAR);
-
-        create_directory(root_path);
-}
-
-#endif
