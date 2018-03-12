@@ -9,8 +9,7 @@
 // moves and special attacks and  defining some constructors
 // to improve the easy understanding of the code.
 character_t *
-generate_character (int body, int pos_x, int pos_y, int (*move)(character_t *),
-                    int (*attack)(character_t *))
+new_character (int body, int pos_x, int pos_y)
 {
 		character_t * new_character;
 
@@ -21,8 +20,8 @@ generate_character (int body, int pos_x, int pos_y, int (*move)(character_t *),
 		new_character->body = body;
 		new_character->pos_x = pos_x;
 		new_character->pos_y = pos_y;
-		new_character->move = move;
-		new_character->attack = attack;
+		new_character->move = static_move;
+		new_character->attack = static_attack;
 
 		return new_character;
 }
@@ -30,11 +29,21 @@ generate_character (int body, int pos_x, int pos_y, int (*move)(character_t *),
 character_t *
 new_drugo (int pos_x, int pos_y)
 {
-		return generate_character('.', pos_x, pos_y, drugo_move, drugo_attack);
+		character_t * character = new_character('.', pos_x, pos_y);
+
+		character->move = drugo_move;
+		character->attack = drugo_attack;
+
+		return character;
 }
 
 character_t *
 new_pterodactyl (int pos_x, int pos_y)
 {
-		return generate_character('<', pos_x, pos_y, ptero_move, ptero_attack);
+		character_t * character = new_character('<', pos_x, pos_y);
+
+		character->move = ptero_move;
+		character->attack = ptero_attack;
+
+		return character;
 }

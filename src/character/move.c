@@ -2,16 +2,20 @@
 
 // This modules defines the game's characters
 // moves, everyone moves with a different strategy.
-int
+void
+static_move (character_t * character)
+{
+		return;
+}
+
+void
 drugo_move (character_t * drugo)
 {
 		// TODO
-		return 0;
 }
 
-int
+void
 ptero_move (character_t * ptero)
 {
 		// TODO
-		return 0;
 }

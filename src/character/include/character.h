@@ -11,8 +11,8 @@ typedef struct _character
         int body;
         int pos_x;
         int pos_y;
-        int (*move)(struct _character *);
-        int (*attack)(struct _character *);
+        void (*move)(struct _character *);
+        void (*attack)(struct _character *);
 } character_t;
 
 character_t * new_drugo (int, int);
