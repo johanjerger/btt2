@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include "utility/include/utility.h"
+#include "utility/include/output.h"
 
 void
 game (char * level, char * player)
 {
+		set_screen();
 		/*if (player == NULL) player_t * player = new_player();
 		   map_t * map = load_map(level);
 		   menu_t * game_menu = new_game_menu();

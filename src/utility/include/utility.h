@@ -11,5 +11,6 @@ void go_out_scores (void);
 void go_out_difficult (void);
 void do_nothing (void);
 char * center_output(char *, int);
+void set_screen (void);
 
 #endif

@@ -4,17 +4,16 @@
 #include "../src/utility/include/color.h"
 
 #define MAIN_ART \
-        "\n\t\t" BRED "                                              " RESET "\n" \
-        "\t\t" BRED "         " BBLACK "       " BRED "      " BBLACK "       " BRED "  " BBLACK "       " BRED "        " RESET "\n" \
-        "\t\t" BRED "         " BBLACK " " BRED "      " BBLACK " " BRED "        " BBLACK " " BRED "        " BBLACK " " BRED "           " RESET "\n" \
-        "\t\t" BRED "         " BBLACK " " BRED "       " BBLACK " " BRED "       " BBLACK " " BRED "        " BBLACK " " BRED "           " RESET "\n" \
-        "\t\t" BRED "         " BBLACK "         " BRED "       " BBLACK " " BRED "        " BBLACK " " BRED "           " RESET "\n" \
-        "\t\t" BRED "         " BBLACK " " BRED "        " BBLACK " " BRED "      " BBLACK " " BRED "        " BBLACK " " BRED "           " RESET "\n" \
-        "\t\t" BRED "         " BBLACK " " BRED "         " BBLACK " " BRED "     " BBLACK " " BRED "        " BBLACK " " BRED "           " RESET "\n" \
-        "\t\t" BRED "         " BBLACK " " BRED "         " BBLACK " " BRED "     " BBLACK " " BRED "        " BBLACK " " BRED "           " RESET "\n" \
-        "\t\t" BRED "         " BBLACK "          " BRED "       " BBLACK " " BRED "        " BBLACK " " BRED "          " RESET "\n" \
-        "\t\t" BRED "                                              " RESET "\n" \
+        "\n\t\t" BRED BLACK "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" BBLACK "%s" BRED "%s" RESET "\n" \
+        "\t\t" BRED BLACK "%s" RESET "\n" \
         "\t\t" BRED BLACK "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾" RESET "\n"
-
 
 #endif

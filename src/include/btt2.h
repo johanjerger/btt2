@@ -33,4 +33,8 @@ char right_key;
 char item_key;
 char enter_key;
 
+// Terminal size
+int term_lines;
+int term_columns;
+
 #endif

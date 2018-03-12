@@ -2,16 +2,27 @@
 #include <string.h>
 #include "include/menu.h"
 #include "../utility/include/utility.h"
+#include "../utility/include/output.h"
+#include "../utility/include/output.h"
 #include "../option/include/option.h"
 #include "../option_list/include/option_list.h"
 #include "../../ascii_art/art2.h"
 #include "../score_table/include/score_table.h"
+#include "../include/btt2.h"
 
 void
 print_art (void)
 {
 		btt_clear();
-		printf(MAIN_ART);
+		printf("\n\n");
+}
+
+void
+print_line (void)
+{
+		printf("%s" BRED "%s" RESET "\n",
+		       center_output("", 16),
+		       center_output("", 46));
 }
 
 void
@@ -21,13 +32,13 @@ show_standard_menu (menu_t * menu)
 		option_list_t * head = menu->options;
 		while(head->next != menu->options)
 		{
-				printf("\t\t" BRED "                                              " RESET "\n");
+				print_line();
 				(head->option)->show(head->option);
 				head = head->next;
 		}
-		printf("\t\t" BRED "                                              " RESET "\n");
+		print_line();
 		(head->option)->show(head->option);
-		printf("\t\t" BRED "                                              " RESET "\n");
+		print_line();
 }
 
 void
@@ -41,7 +52,9 @@ show_scores (menu_t * menu)
 		strcpy(word, score_table_name);
 		strcat(word, " ");
 		strcat(word, menu_name);
-		printf(BRED BLACK "\n\t%s\n" RESET, center_output(word, 63));
+		printf(BLACK "\n%s" BRED "%s\n" RESET,
+		       center_output("", 8),
+		       center_output(word, 63));
 		score_table_t * scores;
 		scores = new_score_table(score_table_name);
 		scores->show(scores);

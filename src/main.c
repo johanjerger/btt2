@@ -5,6 +5,7 @@
 #include "configuration/include/configuration.h"
 #include "menu/include/menu.h"
 #include "keymap/include/keymap.h"
+#include "utility/include/output.h"
 
 int
 main (void)
@@ -12,10 +13,10 @@ main (void)
 		make_configuration();
 		menu_t * main_menu = new_main_menu();
 		keymap_t * main_menu_keymap = new_main_menu_keymap();
-
 		main_loop = true;
 		while (main_loop)
 		{
+				set_screen();
 				main_menu->show(main_menu);
 				main_menu_keymap->execute(main_menu, main_menu_keymap);
 		}
