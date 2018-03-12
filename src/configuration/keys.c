@@ -20,9 +20,9 @@ void keys_configuration()
 		left_key = 'a';
 		right_key = 'd';
 		item_key = 'q';
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 		enter_key = 13;
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 		enter_key = 10;
 #endif
 

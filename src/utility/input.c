@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 #include <conio.h>
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 #include <termios.h>
 #include <unistd.h>
 #include <errno.h>
@@ -15,7 +15,7 @@
 
 // This is a generic getch that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 
 char
 btt_getch (void)
@@ -23,7 +23,7 @@ btt_getch (void)
 		return tolower(_getch());
 }
 
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 
 char
 btt_getch (void)
@@ -45,14 +45,15 @@ btt_getch (void)
 
 // This is a generic kbhit that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
+
 char
 btt_kbhit (void)
 {
 		return tolower(_kbhit());
 }
 
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 
 char
 btt_kbhit (void)

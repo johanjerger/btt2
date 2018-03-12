@@ -4,9 +4,9 @@
 #include <stdbool.h>
 
 // Defining the bars depending on the operating system
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 #define BAR "\\"
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 #define BAR "/"
 #endif
 

@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 #include <windows.h>
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 #include <time.h>
 #include <sys/stat.h>
 #endif
@@ -36,7 +36,7 @@ check_int_error (int value, int error, int error_code, char * error_msg)
 		}
 }
 
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 
 void
 create_directory (char * path)
@@ -45,7 +45,7 @@ create_directory (char * path)
 		                ERROR_CREATING_DIRECTORY, ERROR_CREATING_DIRECTORY_MSG);
 }
 
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 
 // !!!!! THIS FUNCTION NEEDS TO BE REFACTORED !!!!!
 void
@@ -60,7 +60,7 @@ create_directory (char * path)
 
 // This is a generic clear that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 
 void
 btt_clear (void)
@@ -69,7 +69,7 @@ btt_clear (void)
 		check_int_error(system("cls"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
 }
 
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 
 void
 btt_clear (void)
@@ -82,7 +82,7 @@ btt_clear (void)
 
 // This is a generic sleep that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 
 void
 btt_sleep (int time)
@@ -90,7 +90,7 @@ btt_sleep (int time)
 		Sleep(time);
 }
 
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 
 void
 btt_sleep (int time)
