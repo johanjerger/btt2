@@ -5,7 +5,7 @@
 #include "../utility/include/utility.h"
 #include "../utility/include/error.h"
 
-#ifdef _WIN32
+#if defined(_WIN32) ||  defined(WIN32)
 
 void
 get_home(void)
@@ -22,7 +22,7 @@ get_home(void)
 		strcat(home_path, BAR);
 }
 
-#elif __unix__
+#elif defined(__unix__) || defined( __CYGWIN__)
 
 void
 get_home(void)
