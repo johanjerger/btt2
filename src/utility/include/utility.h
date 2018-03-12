@@ -10,6 +10,6 @@ void go_out (void);
 void go_out_scores (void);
 void go_out_difficult (void);
 void do_nothing (void);
-void center_output(char *, char *);
+char * center_output(char *, int);
 
 #endif

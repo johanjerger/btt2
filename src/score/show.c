@@ -4,6 +4,6 @@
 void
 score_show (score_t * score)
 {
-		printf("\t\t  %-.20s\t\t%d\t\t%d\n",
-		       score->player_name, score->points, score->level);
+		printf("%18s%-21s%-16d%-10d\n",
+		       "", score->player_name, score->points, score->level);
 }

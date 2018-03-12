@@ -8,7 +8,7 @@ typedef struct _keymap
         char key;
         struct _keymap * next_key;
         void (*action)();
-        void (*execute)(menu_t *, struct _keymap *, char);
+        void (*execute)(menu_t *, struct _keymap *);
         void (*append)(struct _keymap *, char, void (*)());
 } keymap_t;
 

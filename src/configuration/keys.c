@@ -9,8 +9,8 @@ void keys_configuration()
 
 		keys_conf_path = (char *) malloc(strlen(root_path) * sizeof(char) + 20);
 
-		strcpy(keys_conf_path, root_path);
-		strcat(keys_conf_path, "keys_conf");
+		strcpy(keys_conf_path, config_path);
+		strcat(keys_conf_path, "keys");
 
 		// This initializations must be written in a configurable file later
 
@@ -20,11 +20,5 @@ void keys_configuration()
 		left_key = 'a';
 		right_key = 'd';
 		item_key = 'q';
-#if defined(_WIN32) ||  defined(WIN32)
-		enter_key = 13;
-#elif defined(__unix__) || defined( __CYGWIN__)
-		enter_key = 10;
-#endif
-
-		printf("%s\n", keys_conf_path);
+		enter_key = ENTER;
 }

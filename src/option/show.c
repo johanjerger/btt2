@@ -9,15 +9,11 @@
 void
 show_unselected_option (option_t * opt)
 {
-		char to_print[] = "                                              ";
-		center_output(to_print, opt->text);
-		printf(BRED BLACK "\t\t%s\n" RESET, to_print);
+		printf(BRED BLACK "\t\t%s\n" RESET, center_output(opt->text, 46));
 }
 
 void
 show_selected_option (option_t * opt)
 {
-		char to_print[] = "                                                              ";
-		center_output(to_print, opt->text);
-		printf(BRED BOLD "\t%s\n" RESET, to_print);
+		printf(BRED BOLD "\t%s\n" RESET, center_output(opt->text, 62));
 }

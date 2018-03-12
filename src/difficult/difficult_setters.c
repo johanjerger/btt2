@@ -1,15 +1,15 @@
+#include <stdlib.h>
 #include "../include/game.h"
 
 void
-generic_setter (int str_ammo, int max_ammo, int str_health, int max_health,
-                int str_luck)
+generic_setter (int ammo, int max_ammo, int health, int max_health, int luck)
 {
-		start_ammo = str_ammo;
+		start_ammo = ammo;
 		maximum_ammo = max_ammo;
-		start_health = str_health;
+		start_health = health;
 		maximum_health = max_health;
-		start_luck = str_luck;
-		game();
+		start_luck = luck;
+		game("level_1", NULL);
 }
 
 void

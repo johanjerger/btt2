@@ -4,7 +4,6 @@
 #include "include/btt2.h"
 #include "menu/include/menu.h"
 #include "keymap/include/keymap.h"
-#include "utility/include/input.h"
 
 void
 scores_menu (void)
@@ -16,7 +15,6 @@ scores_menu (void)
 		while (scores_loop)
 		{
 				scores_menu->show(scores_menu);
-				char key = btt_getch();
-				scores_keymap->execute(scores_menu, scores_keymap, key);
+				scores_keymap->execute(scores_menu, scores_keymap);
 		}
 }

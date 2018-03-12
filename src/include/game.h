@@ -8,6 +8,6 @@ int start_health;
 int maximum_health;
 int start_luck;
 
-void game (void);
+void game (char *, char *);
 
 #endif

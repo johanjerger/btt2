@@ -4,7 +4,6 @@
 #include "include/btt2.h"
 #include "menu/include/menu.h"
 #include "keymap/include/keymap.h"
-#include "utility/include/input.h"
 
 void
 difficult_menu()
@@ -16,7 +15,6 @@ difficult_menu()
 		while (difficult_loop)
 		{
 				difficult_menu->show(difficult_menu);
-				char key = btt_getch();
-				difficult_keymap->execute(difficult_menu, difficult_keymap, key);
+				difficult_keymap->execute(difficult_menu, difficult_keymap);
 		}
 }

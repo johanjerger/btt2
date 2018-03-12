@@ -6,8 +6,10 @@
 // Defining the bars depending on the operating system
 #if defined(_WIN32) ||  defined(WIN32)
 #define BAR "\\"
+#define ENTER 13
 #elif defined(__unix__) || defined( __CYGWIN__)
 #define BAR "/"
+#define ENTER 10
 #endif
 
 // root path for games files

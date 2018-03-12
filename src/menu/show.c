@@ -18,7 +18,6 @@ void
 show_standard_menu (menu_t * menu)
 {
 		print_art();
-		//printf(BRED BOLD "\t\t%26s%-20s\n" RESET, menu->title, "");
 		option_list_t * head = menu->options;
 		while(head->next != menu->options)
 		{
@@ -42,9 +41,7 @@ show_scores (menu_t * menu)
 		strcpy(word, score_table_name);
 		strcat(word, " ");
 		strcat(word, menu_name);
-		char to_print[] = "                                                               ";
-		center_output(to_print, word);
-		printf(BRED BLACK "\n\t%s\n" RESET, to_print);
+		printf(BRED BLACK "\n\t%s\n" RESET, center_output(word, 63));
 		score_table_t * scores;
 		scores = new_score_table(score_table_name);
 		scores->show(scores);

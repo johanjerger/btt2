@@ -5,7 +5,6 @@
 #include "configuration/include/configuration.h"
 #include "menu/include/menu.h"
 #include "keymap/include/keymap.h"
-#include "utility/include/input.h"
 
 int
 main (void)
@@ -18,8 +17,7 @@ main (void)
 		while (main_loop)
 		{
 				main_menu->show(main_menu);
-				char key = btt_getch();
-				main_menu_keymap->execute(main_menu, main_menu_keymap, key);
+				main_menu_keymap->execute(main_menu, main_menu_keymap);
 		}
 
 		return 0;
