@@ -5,7 +5,8 @@
 #define CLEAR_ERROR 45731
 #define SLEEP_ERROR 23967
 #define CREATE_ERROR 63375
-#define ERROR_CREATING_DIRECTORY 111 // Modify later
+#define ERROR_CREATING_DIRECTORY 111 // TODO Modify error number
+#define FREAD_ERROR 222 // TODO Modify error number
 #define SCANF_ERROR_MSG "error doing the scanf function in 'utility/input.c'."
 #define MALLOC_ERROR_MSG_CHARACTER "error allocating character_t pointer type."
 #define MALLOC_ERROR_MSG_KEYMAP "error allocating keymap_t pointer type."
@@ -28,5 +29,9 @@
 #define SLEEP_ERROR_MSG "error calling sleep function in 'utility/utility.c'."
 #define ERROR_CREATING_DIRECTORY_MSG "Unable to create configuration path in 'configuration/configuration.c'"
 #define CREATE_ERROR_MSG_SCORE_TABLE "error while creating score table file in 'score_table/open.c'"
+#define FREAD_ERROR_NAMESIZE_MSG "error while reading the size of the name from score table file in 'score/io.c'"
+#define FREAD_ERROR_NAME_MSG "error while reading the players name from score table file in 'score/io.c'"
+#define FREAD_ERROR_SCORE_MSG "error while reading the players score from score table file in 'score/io.c'"
+#define FREAD_ERROR_LEVEL_MSG "error while reading the players end level from score table file in 'score/io.c'"
 
 #endif
