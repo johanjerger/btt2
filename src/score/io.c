@@ -35,7 +35,7 @@ score_read (FILE * score_table_file)
 		return new_score(player_name, points, level);
 }
 
-
+// TODO also check the fwrite function errors
 void
 score_write (FILE * score_table_file, score_t * score)
 {
