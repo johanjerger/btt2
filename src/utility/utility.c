@@ -2,14 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#if defined(_WIN32) ||  defined(WIN32)
-#include <windows.h>
-#elif defined(__unix__) || defined( __CYGWIN__)
 #include <time.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#endif
 #include <errno.h>
 #include "../include/btt2.h"
 #include "include/error.h"
@@ -38,18 +34,7 @@ check_int_error (int value, int error, int error_code, char * error_msg)
 		}
 }
 
-#if defined(_WIN32) ||  defined(WIN32)
-
-void
-create_directory (char * path)
-{
-		check_int_error(CreateDirectory(path, NULL), 0,
-		                ERROR_CREATING_DIRECTORY, ERROR_CREATING_DIRECTORY_MSG);
-}
-
-#elif defined(__unix__) || defined( __CYGWIN__)
-
-// !!!!! THIS FUNCTION NEEDS TO BE REFACTORED !!!!!
+// FIXME error in permissions setting
 void
 create_directory (char * path)
 {
@@ -58,21 +43,8 @@ create_directory (char * path)
 						fprintf(stderr, "%s %s\n", "error in mkdir for path: ", path);
 }
 
-#endif
-
 // This is a generic clear that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
-#if defined(_WIN32) ||  defined(WIN32)
-
-void
-btt_clear (void)
-{
-		btt_sleep(25);
-		check_int_error(system("cls"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
-}
-
-#elif defined(__unix__) || defined( __CYGWIN__)
-
 void
 btt_clear (void)
 {
@@ -80,20 +52,8 @@ btt_clear (void)
 		check_int_error(system("clear"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
 }
 
-#endif
-
 // This is a generic sleep that generate and abstraction
 // no mether if you are in Windows or Unix Systems.
-#if defined(_WIN32) ||  defined(WIN32)
-
-void
-btt_sleep (int time)
-{
-		Sleep(time);
-}
-
-#elif defined(__unix__) || defined( __CYGWIN__)
-
 void
 btt_sleep (int time)
 {
@@ -103,8 +63,6 @@ btt_sleep (int time)
 
 		check_int_error(nanosleep(&ts, NULL), -1, SLEEP_ERROR, SLEEP_ERROR_MSG);
 }
-
-#endif
 
 void
 go_out (void)

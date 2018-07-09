@@ -1,30 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#if defined(_WIN32) ||  defined(WIN32)
-#include <conio.h>
-#elif defined(__unix__) || defined( __CYGWIN__)
 #include <termios.h>
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
-#endif
 #include "include/error.h"
 #include "include/utility.h"
 #include "include/input.h"
 
-// This is a generic getch that generate and abstraction
-// no mether if you are in Windows or Unix Systems.
-#if defined(_WIN32) ||  defined(WIN32)
-
-char
-btt_getch (void)
-{
-		return tolower(_getch());
-}
-
-#elif defined(__unix__) || defined( __CYGWIN__)
-
+// The getch function reads a character from the STDIN
+// without the need of the enter key, also, for requirement
+// purpose, lowercase all the inputs.
 char
 btt_getch (void)
 {
@@ -41,20 +28,8 @@ btt_getch (void)
 		return tolower(ch);
 }
 
-#endif
-
-// This is a generic kbhit that generate and abstraction
-// no mether if you are in Windows or Unix Systems.
-#if defined(_WIN32) ||  defined(WIN32)
-
-char
-btt_kbhit (void)
-{
-		return tolower(_kbhit());
-}
-
-#elif defined(__unix__) || defined( __CYGWIN__)
-
+// The kbhit function reads a character from the STDIN if
+// this is filled, this avoid the need of stop the game.
 char
 btt_kbhit (void)
 {
@@ -80,5 +55,3 @@ btt_kbhit (void)
 
 		return tolower(out);
 }
-
-#endif

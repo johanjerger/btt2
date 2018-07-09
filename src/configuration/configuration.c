@@ -3,6 +3,6 @@
 
 void make_configuration()
 {
-        path_configuration();
+        paths_configuration();
         keys_configuration();
 }

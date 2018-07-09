@@ -7,7 +7,7 @@
 #include "../utility/include/error.h"
 
 void
-path_configuration (void)
+paths_configuration (void)
 {
 		get_home();
 
@@ -34,7 +34,6 @@ path_configuration (void)
 		// Defining the configuration folder for the cfg files
 		config_path = (char *) malloc(size_of_root * sizeof(char) + 20);
 		check_error(config_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_CONFIG_PATH);
-
 		strcpy(config_path, root_path);
 		strcat(config_path, "config");
 		strcat(config_path, BAR);

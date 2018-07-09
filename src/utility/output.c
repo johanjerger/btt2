@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#if defined(__unix__) || defined( __CYGWIN__)
 #include <time.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#endif
 #include "../include/btt2.h"
 
 char *
