@@ -34,13 +34,17 @@ check_int_error (int value, int error, int error_code, char * error_msg)
 		}
 }
 
-// FIXME error in permissions setting
 void
 create_directory (char * path)
 {
-		if(mkdir(path, 440) == -1)
+		if(mkdir(path, 740) == -1)
+		{
 				if(errno != EEXIST)
+				{
 						fprintf(stderr, "%s %s\n", "error in mkdir for path: ", path);
+						exit(errno);
+				}
+		}
 }
 
 // This is a generic clear that generate and abstraction
@@ -48,7 +52,7 @@ create_directory (char * path)
 void
 btt_clear (void)
 {
-		btt_sleep(25);
+		btt_sleep(50);
 		check_int_error(system("clear"), -1, CLEAR_ERROR, CLEAR_ERROR_MSG);
 }
 
