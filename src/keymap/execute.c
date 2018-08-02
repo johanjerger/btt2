@@ -7,7 +7,7 @@ void
 execute_keymap_action (menu_t * actual_menu, keymap_t * actual_keymap)
 {
 		keymap_t * head = actual_keymap;
-		char key = btt_getch();
+		char key = btt_kbhit();
 
 		while (head->key != key && head != head->next_key)
 		{
