@@ -5,8 +5,9 @@
 #define CLEAR_ERROR 45731
 #define SLEEP_ERROR 23967
 #define CREATE_ERROR 63375
-#define ERROR_CREATING_DIRECTORY 111 // TODO Modify error number
-#define FREAD_ERROR 222 // TODO Modify error number
+#define ERROR_CREATING_DIRECTORY 59649
+#define FREAD_ERROR 5688
+#define FWRITE_ERROR 12945
 #define SCANF_ERROR_MSG "error doing the scanf function in 'utility/input.c'."
 #define MALLOC_ERROR_MSG_CHARACTER "error allocating character_t pointer type."
 #define MALLOC_ERROR_MSG_KEYMAP "error allocating keymap_t pointer type."
@@ -33,5 +34,9 @@
 #define FREAD_ERROR_NAME_MSG "error while reading the players name from score table file in 'score/io.c'"
 #define FREAD_ERROR_SCORE_MSG "error while reading the players score from score table file in 'score/io.c'"
 #define FREAD_ERROR_LEVEL_MSG "error while reading the players end level from score table file in 'score/io.c'"
+#define FWRITE_ERROR_NAMESIZE_MSG "error while writing the size of the name from score table file in 'score/io.c'"
+#define FWRITE_ERROR_NAME_MSG "error while writing the players name from score table file in 'score/io.c'"
+#define FWRITE_ERROR_SCORE_MSG "error while writing the players score from score table file in 'score/io.c'"
+#define FWRITE_ERROR_LEVEL_MSG "error while writing the players end level from score table file in 'score/io.c'"
 
 #endif
