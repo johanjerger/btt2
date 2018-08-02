@@ -42,16 +42,11 @@ btt_kbhit (void)
 		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 		oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
 		fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
-
-		char * input_buffer = (char *) malloc(KBHIT_BUFFER * sizeof(char));
-		check_error(input_buffer, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_KBHIT_BUFF);
-		check_int_error(fscanf(stdin,"%s", input_buffer), 0, EIO, SCANF_ERROR_MSG);
+		
+		char out = getchar();
 
 		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 		fcntl(STDIN_FILENO, F_SETFL, oldf);
-
-		char out = input_buffer[0];
-		free(input_buffer);
 
 		return tolower(out);
 }
