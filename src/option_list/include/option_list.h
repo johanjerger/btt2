@@ -22,4 +22,6 @@ option_list_t * new_difficult_options_list (void);
 
 option_list_t * new_scores_options_list (void);
 
+option_list_t * new_config_options_list (void);
+
 #endif

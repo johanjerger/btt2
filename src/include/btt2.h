@@ -18,6 +18,7 @@ bool main_loop;
 bool game_loop;
 bool scores_loop;
 bool difficult_loop;
+bool config_loop;
 
 // global keys configurations
 char action_key;

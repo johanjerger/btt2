@@ -15,7 +15,7 @@ btt2_option = show select destroy
 btt2_option_list = append select destroy
 btt2_score = show io compare
 btt2_score_table = add show open
-btt2_configuration = configuration keys path get_home
+btt2_configuration = configuration keys path get_home key_setters
 btt2_utility = utility input output
 
 btt2_test = main_test test character_test option_test \
@@ -35,6 +35,7 @@ main.o: btt.o
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/difficult_menu.c -o $(TEMPORAL_FOLDER)/difficult_menu.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/config_menu.c -o $(TEMPORAL_FOLDER)/config_menu.o $(CFLAG)
 		gcc -c $(SOURCE_FOLDER)/game.c -o $(TEMPORAL_FOLDER)/game.o $(CFLAG)
 
 btt.o:

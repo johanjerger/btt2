@@ -47,3 +47,9 @@ menu_t * new_scores_menu (void)
 		option_list_t * scores_options = new_scores_options_list();
 		return new_menu("SCORE TABLE", scores_options, show_scores);
 }
+
+menu_t * new_config_menu (void)
+{
+		option_list_t * config_options = new_config_options_list();
+		return new_menu("CONFIGURATION MENU", config_options, show_config);
+}

@@ -59,3 +59,14 @@ new_scores_keymap (void)
 
 		return keymap;
 }
+
+keymap_t *
+new_config_menu_keymap (void)
+{
+		keymap_t * keymap = new_keymap(up_key, select_previous_option);
+		keymap->append(keymap, down_key, select_next_option);
+		keymap->append(keymap, enter_key, execute_menu);
+		keymap->append(keymap, (char) 777, do_nothing);
+
+		return keymap;
+}

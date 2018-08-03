@@ -90,6 +90,13 @@ go_out_difficult (void)
 }
 
 void
+go_out_config (void)
+{
+		btt_clear();
+		config_loop = false;
+}
+
+void
 do_nothing (void)
 {
 		return;

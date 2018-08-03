@@ -59,3 +59,31 @@ show_scores (menu_t * menu)
 		scores = new_score_table(score_table_name);
 		scores->show(scores);
 }
+
+void
+show_config (menu_t * menu)
+{
+		print_art();
+		option_list_t * head = menu->options;
+		char * word = (char *) malloc(63);
+		while(head->next != menu->options)
+		{
+				print_line();
+				strcpy(word, head->option->text);
+				strcat(word, "            .  .  .            ");
+				strcat(word, "k");
+				printf(BLACK "%s" BRED "%s\n" RESET,
+				       center_output("", 8),
+				       center_output(word, 63));
+				head = head->next;
+		}
+		print_line();
+		strcpy(word, head->option->text);
+		strcat(word, "\t.  .  .\t");
+		strcat(word, "k");
+		printf(BLACK "%s" BRED "%s\n" RESET,
+					 center_output("", 8),
+					 center_output(word, 63));
+	  free(word);
+		print_line();
+}

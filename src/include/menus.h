@@ -3,5 +3,6 @@
 
 void scores_menu (void);
 void difficult_menu (void);
+void config_menu (void);
 
 #endif

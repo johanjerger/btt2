@@ -8,6 +8,7 @@
 #include "../utility/include/error.h"
 #include "../include/menus.h"
 #include "../difficult/include/difficult_setters.h"
+#include "../configuration/include/key_setters.h"
 
 option_list_t *
 new_option_list (option_t * opt)
@@ -34,7 +35,7 @@ new_main_menu_options_list (void)
 {
 		option_t * start_option = new_option("START", difficult_menu);
 		option_t * scores_option = new_option("SCORES", scores_menu);
-		option_t * configuration_option = new_option("CONFIG", go_out);
+		option_t * configuration_option = new_option("CONFIG", config_menu);
 		option_t * exit_option = new_option("EXIT", go_out);
 		start_option->select(start_option);
 		option_list_t * option_list = new_option_list(start_option);
@@ -79,6 +80,28 @@ new_scores_options_list (void)
 		option_list->append(option_list, hard_option);
 		option_list->append(option_list, very_hard_option);
 		option_list->append(option_list, hopeless_option);
+
+		return option_list;
+}
+
+option_list_t *
+new_config_options_list (void)
+{
+		option_t * up_option = new_option("UP", set_up_key);
+		option_t * down_option = new_option("DOWN", set_down_key);
+		option_t * left_option = new_option("LEFT", set_left_key);
+		option_t * right_option = new_option("RIGHT", set_right_key);
+		option_t * action_option = new_option("ACTION", set_action_key);
+		option_t * item_option = new_option("ITEM", set_item_key);
+		option_t * return_option = new_option("RETURN", go_out_config);
+		up_option->select(up_option);
+		option_list_t * option_list = new_option_list(up_option);
+		option_list->append(option_list, down_option);
+		option_list->append(option_list, left_option);
+		option_list->append(option_list, right_option);
+		option_list->append(option_list, action_option);
+		option_list->append(option_list, item_option);
+		option_list->append(option_list, return_option);
 
 		return option_list;
 }

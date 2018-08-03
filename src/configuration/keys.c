@@ -12,7 +12,7 @@ void keys_configuration()
 		strcpy(keys_conf_path, config_path);
 		strcat(keys_conf_path, "keys");
 
-		// This initializations must be written in a configurable file later
+		// TODO This initializations must be written in a configurable file later
 
 		action_key = 'k';
 		up_key = 'w';

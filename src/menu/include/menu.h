@@ -25,4 +25,6 @@ menu_t * new_difficult_menu (void);
 
 menu_t * new_scores_menu (void);
 
+menu_t * new_config_menu (void);
+
 #endif
