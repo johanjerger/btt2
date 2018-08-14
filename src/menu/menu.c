@@ -51,5 +51,5 @@ menu_t * new_scores_menu (void)
 menu_t * new_config_menu (void)
 {
 		option_list_t * config_options = new_config_options_list();
-		return new_menu("CONFIGURATION MENU", config_options, show_config);
+		return new_menu("CONFIGURATION MENU", config_options, show_standard_menu);
 }
