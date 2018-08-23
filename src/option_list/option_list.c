@@ -11,7 +11,6 @@
 #include "../include/menus.h"
 #include "../include/btt2.h"
 #include "../difficult/include/difficult_setters.h"
-#include "../configuration/include/key_setters.h"
 
 option_list_t *
 new_option_list (option_t * opt)
@@ -90,10 +89,10 @@ new_scores_options_list (void)
 option_list_t *
 new_config_options_list (void)
 {
-		option_t * up_option = new_option("UP", set_up_key);
-		option_t * down_option = new_option("DOWN", set_down_key);
-		option_t * left_option = new_option("LEFT", set_left_key);
-		option_t * right_option = new_option("RIGHT", set_right_key);
+		option_t * up_option = new_option("UP", key_menu);
+		option_t * down_option = new_option("DOWN", key_menu);
+		option_t * left_option = new_option("LEFT", key_menu);
+		option_t * right_option = new_option("RIGHT", key_menu);
 		option_t * return_option = new_option("RETURN", go_out_config);
 		up_option->select(up_option);
 		option_list_t * option_list = new_option_list(up_option);
