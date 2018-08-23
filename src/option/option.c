@@ -11,7 +11,7 @@
 //  This file defines the game's options, developing his representations and
 //  defining a constructor to improve the easy understanding of the code.
 option_t *
-new_option (char * text, void (*action_function)())
+new_option (char * text, void (*action_function)(option_t *, ...))
 {
 		option_t * new_option;
 

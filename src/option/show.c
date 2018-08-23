@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include "../utility/include/color.h"
 #include "../utility/include/output.h"
@@ -10,15 +11,23 @@
 void
 show_unselected_option (option_t * opt)
 {
+		char * black_space = center_output("", 16);
+		char * text_area = center_output(opt->text, 46);
 		printf(BBLACK BLACK "%s" BRED "%s\n" RESET,
-		       center_output("", 16),
-		       center_output(opt->text, 46));
+		       black_space,
+		       text_area);
+	  free(black_space);
+		free(text_area);
 }
 
 void
 show_selected_option (option_t * opt)
 {
+		char * black_space = center_output("", 8);
+		char * text_area = center_output(opt->text, 62);
 		printf(BBLACK BLACK "%s" BRED WHITE BOLD "%s\n" RESET,
-		       center_output("", 8),
-		       center_output(opt->text, 62));
+		       black_space,
+		       text_area);
+		free(black_space);
+ 		free(text_area);
 }

@@ -4,7 +4,6 @@
 #define KBHIT_BUFFER 32
 
 char btt_getch();
-
 char btt_kbhit();
 
 #endif

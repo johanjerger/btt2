@@ -21,9 +21,11 @@ int keymap_test()
 {
 
         char keys[3] = {'w', 's', '\n'};
-        void (*actions[3])() = {&aux_action_1, &aux_action_2, &aux_action_3};
+        void (*actions[3])() = {aux_action_1, aux_action_2, aux_action_3};
 
-        keymap_t * keymap_test = new_keymap(keys, actions, 3);
+        keymap_t * keymap_test = new_keymap('w', aux_action_1);
+        keymap_test->append(keymap_test, 's', aux_action_2);
+    		keymap_test->append(keymap_test, '\n', aux_action_3);
         keymap_t * next_keymap = keymap_test->next_key;
         keymap_t * last_keymap = next_keymap->next_key;
 
@@ -39,7 +41,7 @@ int keymap_test()
                (last_keymap->action == actions[2])
                , "actions");
 
-        free(keymap_test);
+        keymap_test->destroy(keymap_test);
 
         end_test_title("keymaps");
 

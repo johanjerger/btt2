@@ -15,5 +15,5 @@ get_home(void)
 		check_error(home_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_HOME_PATH);
 
 		strcpy(home_path, home_folder);
-		strcat(home_path, BAR);
+		strcat(home_path, SLASH);
 }

@@ -5,7 +5,7 @@
 #include "../src/option/include/option.h"
 #include "../src/option_list/include/option_list.h"
 
-void some_function()
+void some_function(option_t * option, ...)
 {
         return;
 }
@@ -14,9 +14,9 @@ int option_list_test()
 {
         option_t * option1, * option2, * option3;
 
-        option1 = new_option("START", &some_function);
-        option2 = new_option("CONFIGURATION", &some_function);
-        option3 = new_option("EXIT", &some_function);
+        option1 = new_option("START", some_function);
+        option2 = new_option("CONFIGURATION", some_function);
+        option3 = new_option("EXIT", some_function);
 
         option1->select(option1);
 
@@ -45,7 +45,6 @@ int option_list_test()
                , "active");
 
         option_list_test->destroy(option_list_test);
-        free(option_list_test);
 
         end_test_title("option_list");
 

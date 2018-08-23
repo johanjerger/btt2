@@ -20,9 +20,13 @@ print_art (void)
 void
 print_line (void)
 {
+		char * black_line = center_output("", 16);
+		char * red_line = center_output("", 46);
 		printf("%s" BRED "%s" RESET "\n",
-		       center_output("", 16),
-		       center_output("", 46));
+		       black_line,
+		       red_line);
+	  free(black_line);
+		free(red_line);
 }
 
 void
@@ -58,4 +62,29 @@ show_scores (menu_t * menu)
 		score_table_t * scores;
 		scores = new_score_table(score_table_name);
 		scores->show(scores);
+}
+
+void
+show_key_menu (menu_t * menu)
+{
+	  print_art();
+		print_line();
+		char * menu_name = menu->title;
+		char * text1 = "Set the key for the ";
+		char * text2 = " command:";
+		int len = strlen(text1) + strlen(menu_name) + strlen(text2);
+		char * word = (char *) malloc(len * sizeof(char) + 5);
+		strcpy(word, text1);
+		strcat(word, menu_name);
+		strcat(word, text2);
+		printf(BLACK "%s" BRED "%s\n" RESET,
+		       center_output("", 8),
+		       center_output(word, 63));
+		print_line();
+		printf(BLACK "%s" BRED "%s" RESET WHITE "%s" BLACK BRED "%s\n" RESET,
+		       center_output("", 8),
+		       center_output("", 28),
+				   center_output("---", 7),
+				   center_output("", 28));
+		print_line();
 }

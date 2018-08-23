@@ -53,3 +53,8 @@ menu_t * new_config_menu (void)
 		option_list_t * config_options = new_config_options_list();
 		return new_menu("CONFIGURATION MENU", config_options, show_standard_menu);
 }
+
+menu_t * new_key_menu (char * key)
+{
+		return new_menu(key, NULL, show_key_menu);
+}

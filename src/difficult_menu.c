@@ -19,4 +19,7 @@ difficult_menu()
 				difficult_menu->show(difficult_menu);
 				difficult_keymap->execute(difficult_menu, difficult_keymap);
 		}
+
+		difficult_menu->destroy(difficult_menu);
+		difficult_keymap->destroy(difficult_keymap);
 }

@@ -19,4 +19,7 @@ config_menu()
 				config_menu->show(config_menu);
 				config_keymap->execute(config_menu, config_keymap);
 		}
+
+		config_menu->destroy(config_menu);
+		config_keymap->destroy(config_keymap);
 }

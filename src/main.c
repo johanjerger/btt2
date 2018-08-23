@@ -6,6 +6,7 @@
 #include "menu/include/menu.h"
 #include "keymap/include/keymap.h"
 #include "utility/include/output.h"
+#include "configuration/include/free_environment_variables.h"
 
 int
 main (void)
@@ -21,5 +22,8 @@ main (void)
 				main_menu_keymap->execute(main_menu, main_menu_keymap);
 		}
 
+		free_environment_variables();
+		main_menu->destroy(main_menu);
+		main_menu_keymap->destroy(main_menu_keymap);
 		return 0;
 }

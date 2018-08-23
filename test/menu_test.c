@@ -16,21 +16,20 @@ int menu_test()
         assert(strcmp(main_menu->title, "MAIN MENU") == 0
                , "title");
 
-        assert(main_menu->show == &show_main_menu
+        assert(main_menu->show == show_standard_menu
                , "show menu");
 
         main_menu->next_option(main_menu);
 
-        assert(main_menu->options->next->option->show == &show_selected_option
+        assert(main_menu->options->next->option->show == show_selected_option
                , "next opt");
 
         main_menu->previous_option(main_menu);
 
-        assert(main_menu->options->option->show == &show_selected_option
+        assert(main_menu->options->option->show == show_selected_option
                , "prev opt");
 
         main_menu->destroy(main_menu);
-        free(main_menu);
 
         end_test_title("menus");
 

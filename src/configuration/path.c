@@ -18,7 +18,7 @@ paths_configuration (void)
 
 		strcpy(root_path, home_path);
 		strcat(root_path, ".btt2");
-		strcat(root_path, BAR);
+		strcat(root_path, SLASH);
 		create_directory(root_path);
 
 		// Defining the scores table folder for the scores data
@@ -28,7 +28,7 @@ paths_configuration (void)
 
 		strcpy(scores_path, root_path);
 		strcat(scores_path, "scores");
-		strcat(scores_path, BAR);
+		strcat(scores_path, SLASH);
 		create_directory(scores_path);
 
 		// Defining the configuration folder for the cfg files
@@ -36,6 +36,6 @@ paths_configuration (void)
 		check_error(config_path, NULL, MALLOC_ERROR, MALLOC_ERROR_MSG_CONFIG_PATH);
 		strcpy(config_path, root_path);
 		strcat(config_path, "config");
-		strcat(config_path, BAR);
+		strcat(config_path, SLASH);
 		create_directory(config_path);
 }

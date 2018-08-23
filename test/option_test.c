@@ -5,7 +5,7 @@
 #include "../src/option/include/option.h"
 #include "../src/option/include/show.h"
 
-void test_active_option()
+void test_active_option(option_t * option, ...)
 {
         return;
 }
@@ -14,8 +14,8 @@ int option_test()
 {
         char * text1 = "START";
         char * text2 = "OPTION";
-        option_t * selected_option = new_option(text1, &test_active_option);
-        option_t * unselected_option = new_option(text2, &test_active_option);
+        option_t * selected_option = new_option(text1, test_active_option);
+        option_t * unselected_option = new_option(text2, test_active_option);
 
         selected_option->select(selected_option);
 
@@ -38,8 +38,6 @@ int option_test()
 
         selected_option->destroy(selected_option);
         unselected_option->destroy(unselected_option);
-        free(selected_option);
-        free(unselected_option);
 
         end_test_title("option");
 

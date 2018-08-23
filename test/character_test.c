@@ -6,26 +6,27 @@
 #include "../src/character/include/attack.h"
 #include "../src/character/include/move.h"
 
-int character_test()
+int
+character_test()
 {
         uint16_t pos_x = 2, pos_y = 5;
-        character_t * new_drugo = drugo(pos_x, pos_y);
-        character_t * new_pterodactyl = pterodactyl(pos_x, pos_y);
+        character_t * drugo = new_drugo(pos_x, pos_y);
+        character_t * pterodactyl = new_pterodactyl(pos_x, pos_y);
 
         make_test_title("characters");
 
-        assert(new_drugo->body == '#' && new_pterodactyl->body == '<', "body");
+        assert(drugo->body == '.' && pterodactyl->body == '<', "body");
 
-        assert(new_drugo->pos_x == pos_x && new_pterodactyl->pos_x == pos_x, "pos_x");
+        assert(drugo->pos_x == pos_x && pterodactyl->pos_x == pos_x, "pos_x");
 
-        assert(new_drugo->pos_y == pos_y && new_pterodactyl->pos_y == pos_y, "pos_y");
+        assert(drugo->pos_y == pos_y && pterodactyl->pos_y == pos_y, "pos_y");
 
-        assert(new_drugo->move(new_drugo) == drugo_move(new_drugo), "move");
+        assert(drugo->move == drugo_move, "move");
 
-        assert(new_drugo->attack(new_drugo) == drugo_attack(new_drugo), "attack");
+        assert(drugo->attack == drugo_attack, "attack");
 
-        free(new_drugo);
-        free(new_pterodactyl);
+        free(drugo);
+        free(pterodactyl);
 
         end_test_title("characters");
 

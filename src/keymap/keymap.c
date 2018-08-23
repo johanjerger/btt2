@@ -3,6 +3,7 @@
 #include "include/keymap.h"
 #include "include/execute.h"
 #include "include/append.h"
+#include "include/destroy.h"
 #include "../include/btt2.h"
 #include "../menu/include/menu.h"
 #include "../menu/include/change_option.h"
@@ -23,6 +24,7 @@ new_keymap (char key, void (*action)())
 		new_keymap->execute = execute_keymap_action;
 		new_keymap->next_key = new_keymap;
 		new_keymap->append = keymap_append;
+		new_keymap->destroy = keymap_destroy;
 
 		return new_keymap;
 }
@@ -30,9 +32,9 @@ new_keymap (char key, void (*action)())
 keymap_t *
 new_main_menu_keymap (void)
 {
-		keymap_t * keymap = new_keymap(up_key, select_previous_option);
-		keymap->append(keymap, down_key, select_next_option);
-		keymap->append(keymap, enter_key, execute_menu);
+		keymap_t * keymap = new_keymap(keys[UP], select_previous_option);
+		keymap->append(keymap, keys[DOWN], select_next_option);
+		keymap->append(keymap, keys[ENTER], execute_menu);
 		keymap->append(keymap, (char) 777, do_nothing);
 
 		return keymap;
@@ -41,9 +43,9 @@ new_main_menu_keymap (void)
 keymap_t *
 new_difficult_menu_keymap (void)
 {
-		keymap_t * keymap = new_keymap(up_key, select_previous_option);
-		keymap->append(keymap, down_key, select_next_option);
-		keymap->append(keymap, enter_key, execute_menu);
+		keymap_t * keymap = new_keymap(keys[UP], select_previous_option);
+		keymap->append(keymap, keys[DOWN], select_next_option);
+		keymap->append(keymap, keys[ENTER], execute_menu);
 		keymap->append(keymap, (char) 777, do_nothing);
 
 		return keymap;
@@ -52,9 +54,9 @@ new_difficult_menu_keymap (void)
 keymap_t *
 new_scores_keymap (void)
 {
-		keymap_t * keymap = new_keymap(left_key, select_previous_option);
-		keymap->append(keymap, right_key, select_next_option);
-		keymap->append(keymap, enter_key, execute_menu);
+		keymap_t * keymap = new_keymap(keys[LEFT], select_previous_option);
+		keymap->append(keymap, keys[RIGHT], select_next_option);
+		keymap->append(keymap, keys[ENTER], execute_menu);
 		keymap->append(keymap, (char) 777, do_nothing);
 
 		return keymap;
@@ -63,9 +65,9 @@ new_scores_keymap (void)
 keymap_t *
 new_config_menu_keymap (void)
 {
-		keymap_t * keymap = new_keymap(up_key, select_previous_option);
-		keymap->append(keymap, down_key, select_next_option);
-		keymap->append(keymap, enter_key, execute_menu);
+		keymap_t * keymap = new_keymap(keys[UP], select_previous_option);
+		keymap->append(keymap, keys[DOWN], select_next_option);
+		keymap->append(keymap, keys[ENTER], execute_menu);
 		keymap->append(keymap, (char) 777, do_nothing);
 
 		return keymap;

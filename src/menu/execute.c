@@ -1,7 +1,9 @@
 #include "include/menu.h"
+#include "../option/include/option.h"
 
 void
 execute_menu (menu_t * actual_menu)
 {
-		actual_menu->selected_option->option->action();
+		option_t * option = actual_menu->selected_option->option;
+		option->action(option);
 }

@@ -17,6 +17,6 @@ typedef struct _character
 
 character_t * new_drugo (int, int);
 
-character_t * new_ptero (int, int);
+character_t * new_pterodactyl (int, int);
 
 #endif

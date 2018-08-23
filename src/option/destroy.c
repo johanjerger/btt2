@@ -9,4 +9,5 @@ void
 option_destroy (option_t * option)
 {
 		free(option->text);
+		free(option);
 }

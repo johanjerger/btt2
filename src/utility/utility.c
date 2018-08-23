@@ -69,28 +69,28 @@ btt_sleep (int time)
 }
 
 void
-go_out (void)
+go_out (option_t * option, ...)
 {
 		btt_clear();
 		main_loop = false;
 }
 
 void
-go_out_scores (void)
+go_out_scores (option_t * option, ...)
 {
 		btt_clear();
 		scores_loop = false;
 }
 
 void
-go_out_difficult (void)
+go_out_difficult (option_t * option, ...)
 {
 		btt_clear();
 		difficult_loop = false;
 }
 
 void
-go_out_config (void)
+go_out_config (option_t * option, ...)
 {
 		btt_clear();
 		config_loop = false;

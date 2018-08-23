@@ -14,11 +14,11 @@ void keys_configuration()
 
 		// TODO This initializations must be written in a configurable file later
 
-		action_key = 'k';
-		up_key = 'w';
-		down_key = 's';
-		left_key = 'a';
-		right_key = 'd';
-		item_key = 'q';
-		enter_key = ENTER;
+		keys[UP] = 'w';
+		keys[DOWN] = 's';
+		keys[LEFT] = 'a';
+		keys[RIGHT] = 'd';
+		keys[ENTER] = ENTER_KEY;
+
+		free(keys_conf_path);
 }

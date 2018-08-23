@@ -8,14 +8,14 @@ DEBUG= -g
 CFLAG= -Ofast -Wall -std=gnu11 -pedantic -Werror $(DEBUG)
 
 btt2_character = move attack
-btt2_keymap = execute append
+btt2_keymap = execute append destroy
 btt2_menu = show change_option execute destroy
 btt2_difficult = difficult_setters
 btt2_option = show select destroy
 btt2_option_list = append select destroy
 btt2_score = show io compare
 btt2_score_table = add show open
-btt2_configuration = configuration keys path get_home key_setters
+btt2_configuration = configuration keys path get_home key_setters free_environment_variables
 btt2_utility = utility input output
 
 btt2_test = main_test test character_test option_test \
@@ -33,10 +33,6 @@ test: clean folders test.o $(TEMPORAL_FOLDER) $(BUILD_FOLDER)
 main.o: btt.o
 		# MAIN
 		gcc -c $(SOURCE_FOLDER)/main.c -o $(TEMPORAL_FOLDER)/main.o $(CFLAG)
-		gcc -c $(SOURCE_FOLDER)/difficult_menu.c -o $(TEMPORAL_FOLDER)/difficult_menu.o $(CFLAG)
-		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
-		gcc -c $(SOURCE_FOLDER)/config_menu.c -o $(TEMPORAL_FOLDER)/config_menu.o $(CFLAG)
-		gcc -c $(SOURCE_FOLDER)/game.c -o $(TEMPORAL_FOLDER)/game.o $(CFLAG)
 
 btt.o:
 		# CHARACTERS
@@ -86,6 +82,12 @@ done
 		for file in $(btt2_difficult); do \
 		gcc -c $(SOURCE_FOLDER)/difficult/$$file.c -o $(TEMPORAL_FOLDER)/$$file.o $(CFLAG); \
 done
+		# MENUES
+		gcc -c $(SOURCE_FOLDER)/difficult_menu.c -o $(TEMPORAL_FOLDER)/difficult_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/scores_menu.c -o $(TEMPORAL_FOLDER)/scores_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/config_menu.c -o $(TEMPORAL_FOLDER)/config_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/key_menu.c -o $(TEMPORAL_FOLDER)/key_menu.o $(CFLAG)
+		gcc -c $(SOURCE_FOLDER)/game.c -o $(TEMPORAL_FOLDER)/game.o $(CFLAG)
 
 test.o: btt.o
 		# TEST CLASES

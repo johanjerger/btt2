@@ -8,12 +8,12 @@ typedef struct _option
 {
         char * text;
         void (*show)(struct _option *);
-        void (*action)();
+        void (*action)(struct _option *, ...);
         void (*select)(struct _option *);
         void (*unselect)(struct _option *);
         void (*destroy)(struct _option *);
 } option_t;
 
-option_t * new_option (char *, void (*)());
+option_t * new_option (char *, void (*)(option_t *, ...));
 
 #endif

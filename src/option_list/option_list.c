@@ -90,46 +90,16 @@ new_scores_options_list (void)
 option_list_t *
 new_config_options_list (void)
 {
-		char * text = (char *) malloc(sizeof(char) * 256);
-		char key[2];
-		strcpy(text, center_output("UP", 20));
-		strcat(text, center_output(". . .", 6));
-		key[0] = up_key; key[1] = '\0';
-		strcat(text, center_output(key, 20));
-		option_t * up_option = new_option(text, set_up_key);
-		strcpy(text, center_output("DOWN", 20));
-		strcat(text, center_output(". . .", 6));
-		key[0] = down_key; key[1] = '\0';
-		strcat(text, center_output(key, 20));
-		option_t * down_option = new_option(text, set_down_key);
-		strcpy(text, center_output("LEFT", 20));
-		strcat(text, center_output(". . .", 6));
-		key[0] = left_key; key[1] = '\0';
-		strcat(text, center_output(key, 20));
-		option_t * left_option = new_option(text, set_left_key);
-		strcpy(text, center_output("RIGHT", 20));
-		strcat(text, center_output(". . .", 6));
-		key[0] = right_key; key[1] = '\0';
-		strcat(text, center_output(key, 20));
-		option_t * right_option = new_option(text, set_right_key);
-		strcpy(text, center_output("ACTION", 20));
-		strcat(text, center_output(". . .", 6));
-		key[0] = action_key; key[1] = '\0';
-		strcat(text, center_output(key, 20));
-		option_t * action_option = new_option(text, set_action_key);
-		strcpy(text, center_output("ITEM", 20));
-		strcat(text, center_output(". . .", 6));
-		key[0] = item_key; key[1] = '\0';
-		strcat(text, center_output(key, 20));
-		option_t * item_option = new_option(text, set_item_key);
+		option_t * up_option = new_option("UP", set_up_key);
+		option_t * down_option = new_option("DOWN", set_down_key);
+		option_t * left_option = new_option("LEFT", set_left_key);
+		option_t * right_option = new_option("RIGHT", set_right_key);
 		option_t * return_option = new_option("RETURN", go_out_config);
 		up_option->select(up_option);
 		option_list_t * option_list = new_option_list(up_option);
 		option_list->append(option_list, down_option);
 		option_list->append(option_list, left_option);
 		option_list->append(option_list, right_option);
-		option_list->append(option_list, action_option);
-		option_list->append(option_list, item_option);
 		option_list->append(option_list, return_option);
 
 		return option_list;

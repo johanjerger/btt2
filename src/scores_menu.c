@@ -19,4 +19,7 @@ scores_menu (void)
 				scores_menu->show(scores_menu);
 				scores_keymap->execute(scores_menu, scores_keymap);
 		}
+
+		scores_menu->destroy(scores_menu);
+		scores_keymap->destroy(scores_keymap);
 }

@@ -10,6 +10,7 @@ typedef struct _keymap
         void (*action)();
         void (*execute)(menu_t *, struct _keymap *);
         void (*append)(struct _keymap *, char, void (*)());
+        void (*destroy)(struct _keymap *);
 } keymap_t;
 
 keymap_t * new_keymap(char, void (*)());

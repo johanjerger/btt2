@@ -27,4 +27,6 @@ menu_t * new_scores_menu (void);
 
 menu_t * new_config_menu (void);
 
+menu_t * new_key_menu (char *);
+
 #endif
